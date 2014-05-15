@@ -21,12 +21,13 @@ public class AsyncTaskVacancyDownloader extends AsyncTask<String, String, ArrayL
 
     @Override
     protected ArrayList<Vacancy> doInBackground(String... params) {
-        String source = makeRequestForVacancies("android");
+        String source = makeRequestForVacancies(params[0]);
         VacancyParser parser = new JsonVacancyParser();
         ArrayList<Vacancy> vacancies = parser.parseVacancies(source);
         for (Vacancy vacancy : vacancies) {
             printVacancy(vacancy);
         }
+
         return vacancies;
     }
 
@@ -43,7 +44,6 @@ public class AsyncTaskVacancyDownloader extends AsyncTask<String, String, ArrayL
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return result;
     }
 

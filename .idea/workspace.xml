@@ -15,11 +15,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ca18b0-a0dd-4dfd-9193-32774b67f44c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ListViewAdapterVacancy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml" afterPath="$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AndroidCourse.iws" />
@@ -84,22 +82,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java">
+      <file leaf-file-name="InternetUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/InternetUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="57" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="544">
+            <state line="25" column="15" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsyncTaskVacancyDownloader.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AsyncTaskVacancyDownloader.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="19" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1088">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="9" column="49" selection-start="457" selection-end="457" vertical-scroll-proportion="-1.4605263" vertical-offset="708" max-vertical-offset="1088">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,10 +173,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_listitem_vacancy.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="view_listitem_vacancy.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="52" selection-start="307" selection-end="307" vertical-scroll-proportion="0.3382353" vertical-offset="4" max-vertical-offset="612">
+            <state line="15" column="21" selection-start="546" selection-end="546" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="663">
               <folding />
             </state>
           </provider>
@@ -223,21 +219,21 @@
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MyActivity.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" />
-        <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/listview_item_vacancy.xml" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ListViewAdapterVacancy.java" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml" />
+        <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1316" />
-    <option name="height" value="784" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -671,17 +667,21 @@
       <created>1400173005281</created>
       <updated>1400173005281</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ListView Beta">
+      <created>1400175002731</created>
+      <updated>1400175002731</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1316" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290938" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -691,14 +691,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2870229" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30569106" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Metrics" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26311606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -721,7 +721,8 @@
     </option>
     <MESSAGE value="Test Commit" />
     <MESSAGE value="JSONParser is ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="JSONParser is ready" />
+    <MESSAGE value="ListView Beta" />
+    <option name="LAST_COMMIT_MESSAGE" value="ListView Beta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -882,13 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/InternetUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="5" selection-start="792" selection-end="792" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="32" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
@@ -902,15 +896,6 @@
           <folding>
             <element signature="imports" expanded="false" />
             <element signature="e#1042#1051#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="19" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1088">
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -941,21 +926,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="57" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="544">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="52" selection-start="307" selection-end="307" vertical-scroll-proportion="0.3382353" vertical-offset="4" max-vertical-offset="612">
+        <state line="15" column="21" selection-start="546" selection-end="546" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="663">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="73" selection-start="1451" selection-end="1451" vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/InternetUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="15" selection-start="809" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="49" selection-start="457" selection-end="457" vertical-scroll-proportion="-1.4605263" vertical-offset="708" max-vertical-offset="1088">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
