@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidCourse.iml" filepath="$PROJECT_DIR$/AndroidCourse.iml" />
+      <module fileurl="file://D:/Android/SDK/extras/android/support/v7/appcompat/appcompat.iml" filepath="D:/Android/SDK/extras/android/support/v7/appcompat/appcompat.iml" />
+    </modules>
+  </component>
+</project>
+
