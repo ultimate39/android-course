@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">HHClient</string>
     <string name="title_vacancy">Vacancies</string>
+    <string name="find_vacancies">Find vacancies</string>
+    <string name="vacancy_text_search">What is search? (skills, position)</string>
+    <string name="vacancy_region_search">Region (city, country)</string>
+    <string name="message_text_search_null">Fill field for search</string>
 </resources>

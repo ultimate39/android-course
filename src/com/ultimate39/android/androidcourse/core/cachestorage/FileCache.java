@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
-import com.ultimate39.android.androidcourse.ui.MainActivity;
+import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -62,9 +62,9 @@ public class FileCache {
 
     public void printCacheList() {
         File[] files = mCacheDirectory.listFiles();
-        Log.d(MainActivity.LOG_TAG,"------------------------------");
+        Log.d(ActivityVacancies.LOG_TAG,"------------------------------");
         for(File file:files) {
-            Log.d(MainActivity.LOG_TAG, file.getName());
+            Log.d(ActivityVacancies.LOG_TAG, file.getName());
         }
     }
 }

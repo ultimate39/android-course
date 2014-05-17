@@ -1,5 +1,8 @@
 package com.ultimate39.android.androidcourse.core.vacancy;
 
+import android.util.Log;
+import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
+import com.ultimate39.android.androidcourse.ui.MainActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,6 +45,7 @@ public class JsonVacancyParser implements VacancyParser {
         ArrayList<Vacancy> vacancies = new ArrayList<Vacancy>();
         try {
             JSONObject object = new JSONObject(source);
+            System.out.println("TEXT REQUEST:"+source);
             foundedVacancies = object.getInt("found");
             JSONArray jsonVacancies = (JSONArray) object.get("items");
             for (int item = 0; item < jsonVacancies.length(); item++) {

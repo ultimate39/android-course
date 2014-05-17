@@ -8,7 +8,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import com.ultimate39.android.androidcourse.R;
 import com.ultimate39.android.androidcourse.core.cachestorage.CacheStorage;
-import com.ultimate39.android.androidcourse.ui.MainActivity;
+import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -19,12 +19,9 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
 import java.io.*;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.concurrent.Executor;
 
 
 /**
@@ -44,7 +41,7 @@ public class BitmapCacheDisplayer {
         mCacheStorage.printCacheList();
         mIsCancelDownload = false;
         Bitmap bitmap = mCacheStorage.getBitmapFromMemoryCache(encodeUrl(url));
-        Log.d(MainActivity.LOG_TAG,"Display image");
+        Log.d(ActivityVacancies.LOG_TAG,"Display image");
         if (bitmap == null) {
             LazyImageView lazyImageView = new LazyImageView(imageView, url);
             imageView.setImageResource(R.drawable.default_thumb);
@@ -123,7 +120,7 @@ public class BitmapCacheDisplayer {
         private Bitmap downloadImageFromInternet(String url) {
             Bitmap bitmap = null;
             try {
-                Log.d(MainActivity.LOG_TAG, "Start download:"+url);
+                Log.d(ActivityVacancies.LOG_TAG, "Start download:"+url);
                 HttpParams httpParameters = new BasicHttpParams();
                 HttpConnectionParams.setConnectionTimeout(httpParameters, 10000);
                 HttpConnectionParams.setSoTimeout(httpParameters, 7000);
@@ -134,8 +131,8 @@ public class BitmapCacheDisplayer {
                     return null;
                 }
                 InputStream is = entity.getContent();
-                Log.d(MainActivity.LOG_TAG, "FinishDownload");
-                Log.d(MainActivity.LOG_TAG, "Image is decoded:" + url);
+                Log.d(ActivityVacancies.LOG_TAG, "FinishDownload");
+                Log.d(ActivityVacancies.LOG_TAG, "Image is decoded:" + url);
                 if(!isCancelled()) {
                   bitmap = BitmapFactory.decodeStream(is);
                 }

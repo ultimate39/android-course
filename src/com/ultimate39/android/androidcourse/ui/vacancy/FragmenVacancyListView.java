@@ -1,6 +1,7 @@
 package com.ultimate39.android.androidcourse.ui.vacancy;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,11 +14,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import com.ultimate39.android.androidcourse.ui.MainActivity;
 import com.ultimate39.android.androidcourse.R;
 import com.ultimate39.android.androidcourse.core.vacancy.JsonVacancyParser;
 import com.ultimate39.android.androidcourse.core.vacancy.Vacancy;
 import com.ultimate39.android.androidcourse.core.vacancy.VacancyParser;
-import com.ultimate39.android.androidcourse.ui.MainActivity;
+import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -37,6 +39,10 @@ public class FragmenVacancyListView extends Fragment {
     private Button mButton;
     private CachedAdapterVacancy mVacanciesAdapter;
     private ActionBar mActionBar;
+    private String mSearchText;
+    private String mSearchRegion;
+    private View mProgressBar;
+    private View mListViewContent;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -45,20 +51,29 @@ public class FragmenVacancyListView extends Fragment {
         mVacancyParser = new JsonVacancyParser();
         mActionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         mActionBar.setDisplayShowTitleEnabled(true);
+        Intent intent = getActivity().getIntent();
+        mSearchText = intent.getStringExtra(MainActivity.KEY_TEXT);
+        mSearchRegion = intent.getStringExtra(MainActivity.KEY_REGION);
+        displayVacancies(mSearchText, mSearchRegion);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_vacancy_listview, container, false);
         mListViewVacancies = (ListView) root.findViewById(R.id.lv_vacancies);
-        mEditTextSearch = (EditText) root.findViewById(R.id.et_search_text);
-        mButton = (Button) root.findViewById(R.id.btn_search);
+        //mEditTextSearch = (EditText) root.findViewById(R.id.et_search_text);
+        //mButton = (Button) root.findViewById(R.id.btn_search);
+        /*
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmenVacancyListView.this.test(v);
+           //     FragmenVacancyListView.this.test(v);
             }
         });
+        */
+
+        mListViewContent = root.findViewById(R.id.vacancies_content);
+        mProgressBar = root.findViewById(R.id.progressbar);
 
         if (mVacanciesAdapter != null) {
             mListViewVacancies.setAdapter(mVacanciesAdapter);
@@ -69,35 +84,38 @@ public class FragmenVacancyListView extends Fragment {
         return root;
     }
 
-    public void test(View view) {
+    public void displayVacancies(String searchText, String searchRegion) {
         AsyncTaskVacancyDownloader task = new AsyncTaskVacancyDownloader();
-        try {
-            mVacanciesAdapter.stopDisplayImages();
-            ArrayList<Vacancy> vacancyArrayList = task.execute(mEditTextSearch.getText().toString()).get();
-            Log.d(MainActivity.LOG_TAG, "Step 2 - Create ListView");
-            mVacanciesAdapter.mVacancies = vacancyArrayList;
-            mActionBar.setSubtitle(getActivity().getResources().getString(R.string.title_vacancy)+":"+mVacanciesAdapter.getCount());
-            Log.d(MainActivity.LOG_TAG, "Step 2 - Finished");
-            mVacanciesAdapter.notifyDataSetChanged();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        mVacanciesAdapter.stopDisplayImages();
+        task.execute(searchText);
+
     }
 
+    private void showProgressBar(boolean isShow) {
+        if(isShow){
+            mProgressBar.setVisibility(View.VISIBLE);
+            mListViewContent.setVisibility(View.GONE);
+        } else {
+            mProgressBar.setVisibility(View.GONE);
+            mListViewContent.setVisibility(View.VISIBLE);
+        }
+    }
 
     class AsyncTaskVacancyDownloader extends AsyncTask<String, String, ArrayList<Vacancy>> {
 
         @Override
+        protected void onPreExecute() {
+            showProgressBar(true);
+        }
+
+        @Override
         protected ArrayList<Vacancy> doInBackground(String... params) {
             String source = makeRequestForVacancies(params[0]);
-            VacancyParser parser = new JsonVacancyParser();
-
-            Log.d(MainActivity.LOG_TAG, "Step 1 - Download JSON text");
-            ArrayList<Vacancy> vacancies = parser.parseVacancies(source);
-            Log.d(MainActivity.LOG_TAG, "Step 1 - Finished");
-           // for (Vacancy vacancy : vacancies) {printVacancy(vacancy);}
+            Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Download JSON text");
+            ArrayList<Vacancy> vacancies = mVacancyParser.parseVacancies(source);
+            Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Finished");
+            Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Create ListView");
+            mVacanciesAdapter.mVacancies = vacancies;
             return vacancies;
         }
 
@@ -116,14 +134,23 @@ public class FragmenVacancyListView extends Fragment {
             return result;
         }
 
+        @Override
+        protected void onPostExecute(ArrayList<Vacancy> vacancies) {
+            showProgressBar(false);
+            mActionBar.setTitle(mSearchText);
+            mActionBar.setSubtitle(getActivity().getResources().getString(R.string.title_vacancy)+":"+mVacancyParser.getFoundedVacancies());
+            Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Finished");
+            mVacanciesAdapter.notifyDataSetChanged();
+        }
+
         private void printVacancy(Vacancy vacancy) {
-            Log.d(MainActivity.LOG_TAG, "-------------------------------");
-            Log.d(MainActivity.LOG_TAG, "Name:" + vacancy.getName() + "\n" +
+            Log.d(ActivityVacancies.LOG_TAG, "-------------------------------");
+            Log.d(ActivityVacancies.LOG_TAG, "Name:" + vacancy.getName() + "\n" +
                     "TimePublished:" + vacancy.getTimePublished() + "\n" +
                     "ID:" + vacancy.getId() + "\n" +
                     "LogoUrl:" + vacancy.getLogoUrl() + "\n" +
                     "EmployerName:" + vacancy.getEmployerName() + "\n");
-            Log.d(MainActivity.LOG_TAG, "-------------------------------");
+            Log.d(ActivityVacancies.LOG_TAG, "-------------------------------");
         }
     }
 }
