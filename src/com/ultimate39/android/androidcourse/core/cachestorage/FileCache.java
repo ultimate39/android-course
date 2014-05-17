@@ -3,6 +3,8 @@ package com.ultimate39.android.androidcourse.core.cachestorage;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
+import com.ultimate39.android.androidcourse.ui.MainActivity;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -55,6 +57,14 @@ public class FileCache {
         if (files != null) {
             for (File f : files)
                 f.delete();
+        }
+    }
+
+    public void printCacheList() {
+        File[] files = mCacheDirectory.listFiles();
+        Log.d(MainActivity.LOG_TAG,"------------------------------");
+        for(File file:files) {
+            Log.d(MainActivity.LOG_TAG, file.getName());
         }
     }
 }

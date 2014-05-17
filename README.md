@@ -3,4 +3,4 @@ android-course
 
 Android application for android course
 
-1)BitmapFactory.decode methods have issues. PROOF( Not all jpeg image can be decoded http://www.quora.com/Android-OS/Why-does-the-Android-SKIA-library-have-poor-JPEG-decoding-capabilities)
+1)BitmapFactory.decode methods have issues. PROOF( Not all jpeg image can be decoded https://code.google.com/p/android/issues/detail?id=6066)

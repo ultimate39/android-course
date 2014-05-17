@@ -2,6 +2,8 @@ package com.ultimate39.android.androidcourse.core.cachestorage;
 
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
+import android.util.Log;
+import com.ultimate39.android.androidcourse.ui.MainActivity;
 
 /**
  * Save bitmap files in heap
@@ -16,7 +18,8 @@ public class MemoryCache {
     }
 
     public void addBitmapToMemoryCache(String key, Bitmap bitmap) {
-        if (getBitmapFromMemoryCache(key) == null) {
+        Log.d(MainActivity.LOG_TAG, "Put bitmap"+key);
+        if (getBitmapFromMemoryCache(key) == null && bitmap != null) {
             mMemoryCache.put(key, bitmap);
         }
     }
@@ -29,6 +32,10 @@ public class MemoryCache {
             e.printStackTrace();
         }
         return bitmap;
+    }
+
+    public void printCacheList() {
+        Log.d(MainActivity.LOG_TAG, mMemoryCache.putCount()+"");
     }
 
 }

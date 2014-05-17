@@ -22,7 +22,7 @@ public class JsonVacancyParser implements VacancyParser {
             String id = jsonEmployer.getString("id");
             String logoUrl = null;
             if (!jsonEmployer.isNull("logo_urls")) {
-                logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
+                logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("90");
             }
 
             vacancy.setName(name);

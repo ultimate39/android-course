@@ -16,12 +16,12 @@ import java.util.ArrayList;
 /**
  * Created by Влад on 15.05.14.
  */
-public class ListViewAdapterVacancy extends BaseAdapter {
+public class CachedAdapterVacancy extends BaseAdapter {
     public ArrayList<Vacancy> mVacancies;
     private Context mContext;
     private BitmapCacheDisplayer mBitmapCacheDisplayer;
 
-    public ListViewAdapterVacancy(Context context, ArrayList<Vacancy> vacancies) {
+    public CachedAdapterVacancy(Context context, ArrayList<Vacancy> vacancies) {
         mVacancies = vacancies;
         mContext = context;
         mBitmapCacheDisplayer = new BitmapCacheDisplayer(context, "images");
@@ -42,6 +42,10 @@ public class ListViewAdapterVacancy extends BaseAdapter {
         return position;
     }
 
+
+    public void stopDisplayImages(){
+        mBitmapCacheDisplayer.stopDisplayImages();
+    }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext
@@ -74,4 +78,5 @@ public class ListViewAdapterVacancy extends BaseAdapter {
         vh.ivLogo = (ImageView) convertView.findViewById(R.id.iv_logo);
         convertView.setTag(vh);
     }
+
 }

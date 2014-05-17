@@ -2,6 +2,8 @@ package com.ultimate39.android.androidcourse.core.cachestorage;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.util.Log;
+import com.ultimate39.android.androidcourse.ui.MainActivity;
 
 /**
  * Created by Влад on 16.05.14.
@@ -15,11 +17,16 @@ public class CacheStorage {
         mFileCache = new FileCache(context, nameOfCacheDirectory);
     }
 
+    public void printCacheList() {
+        //mFileCache.printCacheList();
+        mMemoryCache.printCacheList();
+    }
+
     public Bitmap getBitmap(String name) {
         Bitmap bitmap = getBitmapFromMemoryCache(name);
+        Log.d(MainActivity.LOG_TAG, "NAME OF FILE!!!!!!:" + name);
         if (bitmap == null) {
             bitmap = getBitmapFromDisk(name);
-
         }
         return bitmap;
     }
