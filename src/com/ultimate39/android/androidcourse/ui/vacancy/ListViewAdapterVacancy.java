@@ -21,7 +21,7 @@ public class ListViewAdapterVacancy extends BaseAdapter {
     private Context mContext;
     private BitmapCacheDisplayer mBitmapCacheDisplayer;
 
-    public ListViewAdapterVacancy (Context context, ArrayList<Vacancy> vacancies){
+    public ListViewAdapterVacancy(Context context, ArrayList<Vacancy> vacancies) {
         mVacancies = vacancies;
         mContext = context;
         mBitmapCacheDisplayer = new BitmapCacheDisplayer(context, "images");
@@ -53,20 +53,20 @@ public class ListViewAdapterVacancy extends BaseAdapter {
         vh.tvName.setText(vacancy.getName());
         vh.tvPublishedTime.setText(vacancy.getTimePublished());
         vh.tvEmployerName.setText(vacancy.getEmployerName());
-        if(vacancy.getLogoUrl() != null) {
-         mBitmapCacheDisplayer.displayImage(vh.ivLogo, vacancy.getLogoUrl());
+        if (vacancy.getLogoUrl() != null) {
+            mBitmapCacheDisplayer.displayImage(vh.ivLogo, vacancy.getLogoUrl());
         }
         return convertView;
     }
 
-    class ViewHolder{
+    class ViewHolder {
         TextView tvName;
         TextView tvEmployerName;
         TextView tvPublishedTime;
         ImageView ivLogo;
     }
 
-    private void setViewHolder (View convertView) {
+    private void setViewHolder(View convertView) {
         ViewHolder vh = new ViewHolder();
         vh.tvEmployerName = (TextView) convertView.findViewById(R.id.tv_vacancy_employer);
         vh.tvName = (TextView) convertView.findViewById(R.id.tv_vacancy_name);

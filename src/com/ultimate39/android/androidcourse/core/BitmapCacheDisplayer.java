@@ -114,13 +114,11 @@ public class BitmapCacheDisplayer {
             return bitmap;
         }
 
-        public byte[] readFully(InputStream input) throws IOException
-        {
+        public byte[] readFully(InputStream input) throws IOException {
             byte[] buffer = new byte[8192];
             int bytesRead;
             ByteArrayOutputStream output = new ByteArrayOutputStream();
-            while ((bytesRead = input.read(buffer)) != -1)
-            {
+            while ((bytesRead = input.read(buffer)) != -1) {
                 output.write(buffer, 0, bytesRead);
             }
             return output.toByteArray();
@@ -144,13 +142,13 @@ public class BitmapCacheDisplayer {
             return inSampleSize;
         }
 
-        public Bitmap decodeSampledBitmapFromResource(byte[] bytes , int reqWidth, int reqHeight) {
+        public Bitmap decodeSampledBitmapFromResource(byte[] bytes, int reqWidth, int reqHeight) {
             final BitmapFactory.Options options = new BitmapFactory.Options();
             options.inJustDecodeBounds = true;
-            BitmapFactory.decodeByteArray(bytes,0, bytes.length, options);
+            BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
             options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
             options.inJustDecodeBounds = false;
-            return BitmapFactory.decodeByteArray(bytes,0, bytes.length, options);
+            return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
         }
     }
 }

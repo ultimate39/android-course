@@ -5,7 +5,6 @@ import android.util.Log;
 import com.ultimate39.android.androidcourse.core.vacancy.JsonVacancyParser;
 import com.ultimate39.android.androidcourse.core.vacancy.Vacancy;
 import com.ultimate39.android.androidcourse.core.vacancy.VacancyParser;
-import com.ultimate39.android.androidcourse.ui.MainActivity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;

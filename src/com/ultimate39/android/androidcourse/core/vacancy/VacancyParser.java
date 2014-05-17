@@ -9,10 +9,9 @@ public interface VacancyParser {
 
     public ArrayList<Vacancy> parseVacancies(String source);
 
-    public Vacancy parseDetailedVacancy (String source);
+    public Vacancy parseDetailedVacancy(String source);
 
     public int getFoundedVacancies();
-
 
 
 }

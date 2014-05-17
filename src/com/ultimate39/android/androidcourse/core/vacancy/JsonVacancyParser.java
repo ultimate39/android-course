@@ -1,6 +1,5 @@
 package com.ultimate39.android.androidcourse.core.vacancy;
 
-import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,10 +21,9 @@ public class JsonVacancyParser implements VacancyParser {
             String employerName = jsonEmployer.getString("name");
             String id = jsonEmployer.getString("id");
             String logoUrl = null;
-            if(!jsonEmployer.isNull("logo_urls")) {
-               logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
+            if (!jsonEmployer.isNull("logo_urls")) {
+                logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
             }
-
 
             vacancy.setName(name);
             vacancy.setTimePublished(publishedAt);
@@ -69,10 +67,10 @@ public class JsonVacancyParser implements VacancyParser {
             String employerName = jsonEmployer.getString("name");
             String id = jsonEmployer.getString("id");
             String logoUrl = null;
-            if(!jsonEmployer.isNull("logo_urls")) {
+
+            if (!jsonEmployer.isNull("logo_urls")) {
                 logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
             }
-
 
             vacancy.setName(name);
             vacancy.setTimePublished(publishedAt);
@@ -80,7 +78,6 @@ public class JsonVacancyParser implements VacancyParser {
             vacancy.setLogoUrl(logoUrl);
             vacancy.setId(id);
             vacancy.setDescription(description);
-
         } catch (JSONException e) {
             e.printStackTrace();
         }

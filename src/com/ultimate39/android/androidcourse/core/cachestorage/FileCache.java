@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 /**
- Save bitmap files on disk (external of internal)
+ * Save bitmap files on disk (external of internal)
  */
 public class FileCache {
     private File mCacheDirectory;
@@ -24,8 +24,8 @@ public class FileCache {
     public Bitmap getBitmap(String name) {
         File file = new File(mCacheDirectory, name);
         Bitmap bitmap = null;
-        if(file.length() != 0) {
-          bitmap = decodeFileToBitmap(file);
+        if (file.length() != 0) {
+            bitmap = decodeFileToBitmap(file);
         }
         return bitmap;
     }

@@ -24,6 +24,7 @@ public class FragmenVacancyListView extends Fragment {
     private EditText mEditTextSearch;
     private Button mButton;
     private ListViewAdapterVacancy mVacanciesAdapter;
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -43,7 +44,7 @@ public class FragmenVacancyListView extends Fragment {
             }
         });
 
-        if(mVacanciesAdapter != null) {
+        if (mVacanciesAdapter != null) {
             mListViewVacancies.setAdapter(mVacanciesAdapter);
         } else {
             mVacanciesAdapter = new ListViewAdapterVacancy(getActivity(), new ArrayList<Vacancy>());
@@ -53,7 +54,7 @@ public class FragmenVacancyListView extends Fragment {
         return root;
     }
 
-    public void test (View view) {
+    public void test(View view) {
         AsyncTaskVacancyDownloader task = new AsyncTaskVacancyDownloader();
         try {
             ArrayList<Vacancy> vacancyArrayList = task.execute(mEditTextSearch.getText().toString()).get();
