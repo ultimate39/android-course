@@ -7,7 +7,36 @@ public class Vacancy {
     private String name;
     private String timePublished;
     private String employerName;
-    //private String logoUrl;
+    private String id;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    private String description;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLogoUrl() {
+        return logoUrl;
+    }
+
+    public void setLogoUrl(String logoUrl) {
+        this.logoUrl = logoUrl;
+    }
+
+    private String logoUrl;
+
     public String getName() {
         return name;
     }

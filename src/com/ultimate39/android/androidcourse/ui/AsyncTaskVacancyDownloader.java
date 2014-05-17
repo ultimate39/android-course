@@ -40,7 +40,6 @@ public class AsyncTaskVacancyDownloader extends AsyncTask<String, String, ArrayL
         try {
             HttpResponse response = client.execute(get);
             result = EntityUtils.toString(response.getEntity());
-            Log.d(MainActivity.LOG_TAG,  result);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -51,6 +50,8 @@ public class AsyncTaskVacancyDownloader extends AsyncTask<String, String, ArrayL
         Log.d(MainActivity.LOG_TAG, "-------------------------------");
         Log.d(MainActivity.LOG_TAG, "Name:" + vacancy.getName() + "\n" +
                 "TimePublished:" + vacancy.getTimePublished() + "\n" +
+                "ID:" + vacancy.getId() + "\n" +
+                "LogoUrl:" + vacancy.getLogoUrl() + "\n" +
                 "EmployerName:" + vacancy.getEmployerName() + "\n");
         Log.d(MainActivity.LOG_TAG, "-------------------------------");
     }

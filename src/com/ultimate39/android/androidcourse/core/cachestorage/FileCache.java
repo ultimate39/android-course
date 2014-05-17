@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 /**
  Save bitmap files on disk (external of internal)
@@ -15,24 +16,27 @@ public class FileCache {
     private File mCacheDirectory;
 
     public FileCache(Context context, String nameOfCacheDirectory) {
-        if (isExternalStorageAvailable()) {
-            mCacheDirectory = new File(android.os.Environment.getExternalStorageDirectory(), nameOfCacheDirectory);
-        } else {
-            mCacheDirectory = context.getCacheDir();
-        }
-
+        mCacheDirectory = context.getCacheDir();
         if (!mCacheDirectory.exists())
             mCacheDirectory.mkdirs();
     }
 
-    private boolean isExternalStorageAvailable() {
-        return android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
-    }
-
     public Bitmap getBitmap(String name) {
         File file = new File(mCacheDirectory, name);
-        Bitmap bitmap = decodeFileToBitmap(file);
+        Bitmap bitmap = null;
+        if(file.length() != 0) {
+          bitmap = decodeFileToBitmap(file);
+        }
         return bitmap;
+    }
+
+    public void putBitmap(String name, Bitmap bitmap) {
+        File file = new File(mCacheDirectory, name);
+        try {
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, new FileOutputStream(file));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private Bitmap decodeFileToBitmap(File file) {
@@ -53,6 +57,4 @@ public class FileCache {
                 f.delete();
         }
     }
-
-
 }

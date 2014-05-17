@@ -1,34 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="15dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="15dp"
+    >
 
-    <TextView
-        android:id="@+id/tv_vacancy_name"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Android Senior разработчик"
-        android:textSize="20sp"
-        />
+        >
 
-    <TextView
-        android:id="@+id/tv_vacancy_employer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_vacancy_name"
-        android:layout_marginTop="5dp"
-        android:text="ОАО Газпром"
-        />
+        <TextView
+            android:id="@+id/tv_vacancy_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Senior разработчик"
+            android:textSize="20sp"
+            android:textColor="#ffe54a00"
+            android:layout_toLeftOf="@+id/iv_logo"
+            android:layout_alignParentLeft="true"/>
 
-    <TextView
-        android:id="@+id/tv_published_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12 мая"
-        android:layout_alignTop="@+id/tv_vacancy_employer"
-        android:layout_alignParentRight="true"/>
+        <TextView
+            android:id="@+id/tv_vacancy_employer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ОАО Газпром"
+            android:layout_below="@id/tv_vacancy_name"
+            android:paddingTop="5dp"
+            android:layout_alignParentLeft="true"/>
 
-</RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_published_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14 мая"
+            android:layout_below="@id/tv_vacancy_employer"/>
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/default_thumb"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+</LinearLayout>
