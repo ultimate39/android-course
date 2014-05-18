@@ -8,7 +8,7 @@ Android application for android course
 2) Caching images (in memory and on disk) <br>
 3) Search by region <br>
 4) AutoCompletion of regions <br>
-5) Swipe down to refresh litview <br>
+5) Swipe down to refresh listview <br>
 6) Error handle on all screens <br>
 7) All words in en/rus <br>
 8) Support Android  2.2+ <br>
