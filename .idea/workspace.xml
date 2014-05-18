@@ -35,26 +35,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ca18b0-a0dd-4dfd-9193-32774b67f44c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-ldpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-ldpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/res/drawable-mdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/CacheStorage.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/CacheStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/FileCache.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/FileCache.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/MemoryCache.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/MemoryCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/Vacancy.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/Vacancy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_vacancy_listview.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_vacancy_listview.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" afterPath="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values-ru/strings.xml" afterPath="$PROJECT_DIR$/res/values-ru/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Работа\AndroidCourses\Lab\AndroidCourse\src\com\ultimate39\android\androidcourse\ui\ActivityVacancies.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityVacancies.java" />
     </list>
     <ignored path="AndroidCourse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,33 +106,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BitmapCacheDisplayer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="54" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="3060">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FragmenVacancyListView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="76" selection-start="4219" selection-end="4219" vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="3196">
+            <state line="55" column="21" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="3247">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3727#4282#0" expanded="true" />
-                <element signature="e#4271#4272#0" expanded="true" />
-                <element signature="e#6509#6571#0" expanded="true" />
+                <element signature="e#3831#4481#0" expanded="true" />
+                <element signature="e#4470#4471#0" expanded="true" />
+                <element signature="e#6708#6770#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityVacancies.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityVacancies.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="8" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+            <state line="32" column="25" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="327" max-vertical-offset="782">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TODO.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TODO.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="24" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="67" selection-start="313" selection-end="313" vertical-scroll-proportion="0.2802198" vertical-offset="0" max-vertical-offset="364">
               <folding />
             </state>
           </provider>
@@ -153,7 +152,7 @@
       <file leaf-file-name="activity_vacancy_detail.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="46" selection-start="3156" selection-end="3156" vertical-scroll-proportion="-2.16" vertical-offset="1306" max-vertical-offset="1683">
+            <state line="91" column="21" selection-start="3630" selection-end="3630" vertical-scroll-proportion="-44.16" vertical-offset="443" max-vertical-offset="1887">
               <folding />
             </state>
           </provider>
@@ -177,7 +176,7 @@
       <file leaf-file-name="activity_vacancy_listview.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_listview.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="4" selection-start="374" selection-end="374" vertical-scroll-proportion="-6.08" vertical-offset="1" max-vertical-offset="323">
+            <state line="9" column="27" selection-start="397" selection-end="397" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -189,7 +188,7 @@
       <file leaf-file-name="ActivityDetailedVacancy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="65" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="2805">
+            <state line="37" column="43" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="2839">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,33 +196,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vacancy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/Vacancy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="31" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1258">
-              <folding>
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-                <element signature="e#531#532#0" expanded="true" />
-                <element signature="e#560#561#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
-                <element signature="e#640#641#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#714#715#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#818#819#0" expanded="true" />
-                <element signature="e#856#857#0" expanded="true" />
-                <element signature="e#890#891#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonVacancyParser.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JsonVacancyParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="78" selection-start="4295" selection-end="4295" vertical-scroll-proportion="0.5192802" vertical-offset="1651" max-vertical-offset="2057">
+            <state line="33" column="21" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="393" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
@@ -232,7 +208,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values-ru/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="66" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+            <state line="11" column="24" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -268,7 +244,6 @@
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/VacancyParser.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/AsyncTaskVacancyDownloader.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ListViewAdapterVacancy.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/CacheStorage.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/MemoryCache.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/FileCache.java" />
@@ -280,15 +255,16 @@
         <option value="$PROJECT_DIR$/res/layout/fragment_vacancy_listview.xml" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/Vacancy.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityVacancies.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/res/values-ru/strings.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java" />
+        <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/values-ru/strings.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java" />
-        <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -850,7 +826,11 @@
       <created>1400362433135</created>
       <updated>1400362433135</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add detailed activity">
+      <created>1400402301902</created>
+      <updated>1400402301902</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -935,7 +915,8 @@
     <MESSAGE value="Reformat code" />
     <MESSAGE value="Stable version with cash" />
     <MESSAGE value="Add activity with search button and edittext" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add activity with search button and edittext" />
+    <MESSAGE value="Add detailed activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add detailed activity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1154,11 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="140" selection-start="211" selection-end="211" vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="204" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/MemoryCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="67" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="748">
@@ -1183,13 +1159,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/CacheStorage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="0" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="952">
@@ -1209,26 +1178,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="25" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="327" max-vertical-offset="782">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1327#1386#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_listview.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="374" selection-end="374" vertical-scroll-proportion="-6.08" vertical-offset="1" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
@@ -1253,26 +1202,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="4" selection-start="442" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values-ru/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="66" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="67" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="578">
           <folding>
             <element signature="e#1054#1093#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="59" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="550" max-vertical-offset="1309">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="54" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="3060">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1286,23 +1235,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="46" selection-start="3156" selection-end="3156" vertical-scroll-proportion="-2.16" vertical-offset="1306" max-vertical-offset="1683">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="59" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="550" max-vertical-offset="1309">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityVacancies.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="8" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
@@ -1310,16 +1242,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_listview.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="54" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="3060">
+        <state line="9" column="27" selection-start="397" selection-end="397" vertical-scroll-proportion="-6.12" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="25" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.0" vertical-offset="327" max-vertical-offset="782">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="4" selection-start="571" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values-ru/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="24" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="65" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="2805">
+        <state line="37" column="43" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="2839">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1328,19 +1286,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="76" selection-start="4219" selection-end="4219" vertical-scroll-proportion="0.0" vertical-offset="1498" max-vertical-offset="3196">
+        <state line="55" column="21" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="3247">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3727#4282#0" expanded="true" />
-            <element signature="e#4271#4272#0" expanded="true" />
-            <element signature="e#6509#6571#0" expanded="true" />
+            <element signature="e#3831#4481#0" expanded="true" />
+            <element signature="e#4470#4471#0" expanded="true" />
+            <element signature="e#6708#6770#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="78" selection-start="4295" selection-end="4295" vertical-scroll-proportion="0.5192802" vertical-offset="1651" max-vertical-offset="2057">
+        <state line="33" column="21" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.0" vertical-offset="393" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="21" selection-start="3630" selection-end="3630" vertical-scroll-proportion="-44.16" vertical-offset="443" max-vertical-offset="1887">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="24" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="67" selection-start="313" selection-end="313" vertical-scroll-proportion="0.2802198" vertical-offset="0" max-vertical-offset="364">
           <folding />
         </state>
       </provider>
