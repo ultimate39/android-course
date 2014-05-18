@@ -12,10 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.*;
 import com.ultimate39.android.androidcourse.core.BitmapCacheDisplayer;
 import com.ultimate39.android.androidcourse.ui.MainActivity;
 import com.ultimate39.android.androidcourse.R;
@@ -30,6 +27,8 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 /**
@@ -75,7 +74,7 @@ public class FragmenVacancyListView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_vacancy_listview, container, false);
-        mListViewVacancies = (ListView) root.findViewById(R.id.lv_vacancies);
+        mListViewVacancies = (ListView) root.findViewById(R.id.lv_vacancies);        mListViewVacancies.setOnScr
         //mEditTextSearch = (EditText) root.findViewById(R.id.et_search_text);
         //mButton = (Button) root.findViewById(R.id.btn_search);
         /*
@@ -100,9 +99,10 @@ public class FragmenVacancyListView extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ActivityDetailedVacancy.class);
-                String vacancyId = ((Vacancy)mVacanciesAdapter.getItem(position)).getId();
-                intent.putExtra(ActivityVacancies.KEY_VACANCY_ID, vacancyId);
-                Log.d(ActivityVacancies.LOG_TAG, "Vacancy ID:" + vacancyId);
+                Vacancy vacancy = ((Vacancy)mVacanciesAdapter.getItem(position));
+                intent.putExtra(ActivityVacancies.KEY_VACANCY_ID, vacancy.getId());
+                intent.putExtra(ActivityVacancies.KEY_LOGO_URL, vacancy.getLogoUrl());
+                Log.d(ActivityVacancies.LOG_TAG, "Vacancy ID:" + vacancy.getId() + " " + vacancy.getName());
                 BitmapCacheDisplayer.getInstance(getActivity(), "images").stopDisplayImages();
                 startActivity(intent);
             }
@@ -147,12 +147,17 @@ public class FragmenVacancyListView extends Fragment {
 
 
         private String makeRequestForVacancies(String textSearch) {
-            final String URL = "https://api.hh.ru/vacancies";
+
             HttpClient client = new DefaultHttpClient();
-            HttpGet get = new HttpGet(URL);
-            HttpParams params = new BasicHttpParams();
-            params.setParameter("text", textSearch);
-            get.setParams(params);
+            String url = "";
+            try {
+                 url = "https://api.hh.ru/vacancies?text=" + URLEncoder.encode(textSearch, "UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+            Log.d(ActivityVacancies.LOG_TAG, "DASDSDADA" + url);
+            HttpGet get = new HttpGet(url);
             String result = null;
             try {
                 HttpResponse response = client.execute(get);
@@ -180,6 +185,27 @@ public class FragmenVacancyListView extends Fragment {
                     "LogoUrl:" + vacancy.getLogoUrl() + "\n" +
                     "EmployerName:" + vacancy.getEmployerName() + "\n");
             Log.d(ActivityVacancies.LOG_TAG, "-------------------------------");
+        }
+    }
+
+    private class SwipeDownToRefresh implements AbsListView.OnScrollListener {
+
+        @Override
+        public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+        }
+
+        @Override
+        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            if(firstVisibleItem+visibleItemCount == totalItemCount && totalItemCount!=0)
+            {
+                if(flag_loading == false)
+                {
+                    flag_loading = true;
+                    additems();
+                }
+            }
+        }
         }
     }
 }

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              >
+
+    <FrameLayout
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp">
+
+            <RelativeLayout
+                android:id="@+id/content_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/tv_vacancy_detailed_name"
+                    android:layout_width="wrap_content"
+                    android:textSize="18dp"
+                    android:text="Разработчик Android"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_toLeftOf="@+id/iv_vacancy_detailed_logo"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tv_vacancy_detailed_salary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_vacancy_detailed_name"
+                    android:text="от 7000000 руб"
+                    android:layout_marginBottom="3dp"/>
+
+                <TextView
+                    android:id="@+id/tv_vacancy_detailed_published_at"
+                    android:text="Москва, 2014.03.12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:layout_below="@id/tv_vacancy_detailed_salary"/>
+
+                <TextView
+                    android:id="@+id/tv_vacancy_detailed_employer"
+                    android:text="ОАО Газпром"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_vacancy_detailed_published_at"/>
+
+                <ImageView
+                    android:id="@+id/iv_vacancy_detailed_logo"
+                    android:src="@drawable/default_thumb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/footer_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/content_header">
+                <ImageView
+                    android:id="@+id/separateline"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentTop="true"
+                    />
+
+                <WebView
+                    android:id="@+id/wv_vacancy_detailed_description"
+                    android:layout_below="@id/separateline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

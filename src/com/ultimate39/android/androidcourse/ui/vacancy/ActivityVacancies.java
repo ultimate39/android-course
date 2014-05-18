@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class ActivityVacancies extends ActionBarActivity {
     public static final String LOG_TAG = "androidcourse";
     public static final String KEY_VACANCY_ID = "vacancy_id";
+    public static final String KEY_LOGO_URL = "vacancy_logo_url";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -11,6 +11,7 @@ public class Vacancy {
     private String alternateUrl;
     private String description;
     private String salary;
+    private String logoUrl;
 
     public String getRegion() {
         return region;
@@ -61,8 +62,6 @@ public class Vacancy {
     public void setLogoUrl(String logoUrl) {
         this.logoUrl = logoUrl;
     }
-
-    private String logoUrl;
 
     public String getName() {
         return name;

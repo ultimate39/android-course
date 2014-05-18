@@ -24,10 +24,10 @@ public class JsonVacancyParser implements VacancyParser {
         Vacancy vacancy = new Vacancy();
         try {
             String name = jsonVacancy.getString("name");
+            String id = jsonVacancy.getString("id");
             String publishedAt = jsonVacancy.getString("published_at");
             JSONObject jsonEmployer = (JSONObject) jsonVacancy.get("employer");
             String employerName = jsonEmployer.getString("name");
-            String id = jsonEmployer.getString("id");
             String logoUrl = null;
             if (!jsonEmployer.isNull("logo_urls")) {
                 logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
@@ -71,27 +71,20 @@ public class JsonVacancyParser implements VacancyParser {
             JSONObject jsonVacancy = new JSONObject(source);
             String name = jsonVacancy.getString("name");
             String description = jsonVacancy.getString("description");
+            String alternateUrl = jsonVacancy.getString("alternate_url");
             String publishedAt = jsonVacancy.getString("published_at");
+            String id = jsonVacancy.getString("id");
 
             JSONObject jsonEmployer = (JSONObject) jsonVacancy.get("employer");
             String employerName = jsonEmployer.getString("name");
-            String id = jsonEmployer.getString("id");
-            String salary = "";
-            if (!jsonVacancy.isNull("salary")) {
-                JSONObject jsonSalary = (JSONObject) jsonVacancy.get("salary");
-                String from = jsonSalary.getString("from");
-                String to = jsonSalary.getString("to");
-                String currency = currencyConverter(jsonSalary.getString("currency"));
-                if (from != null) {
-                    salary += from;
-                    if (to != null) {
-                        salary += " - " + to + " " + currency;
-                    }
-                }
-            }
             String logoUrl = null;
             if (!jsonEmployer.isNull("logo_urls")) {
                 logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
+            }
+
+            String salary = "";
+            if (!jsonVacancy.isNull("salary")) {
+                salary = jsonSalaryToString(jsonVacancy.getJSONObject("salary"));
             }
 
             vacancy.setName(name);
@@ -101,6 +94,7 @@ public class JsonVacancyParser implements VacancyParser {
             vacancy.setId(id);
             vacancy.setDescription(description);
             vacancy.setSalary(salary);
+            vacancy.setAlternateUrl(alternateUrl);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -110,6 +104,29 @@ public class JsonVacancyParser implements VacancyParser {
     @Override
     public int getFoundedVacancies() {
         return foundedVacancies;
+    }
+
+    private String jsonSalaryToString(JSONObject jsonSalary) {
+        String salary = "";
+        try {
+            String from = jsonSalary.getString("from");
+            String to = jsonSalary.getString("to");
+            String currency = currencyConverter(jsonSalary.getString("currency"));
+            if (!from.equals("null")) {
+                salary += from;
+                if (!to.equals("null")) {
+                    salary += " - " + to + " " + currency;
+                } else {
+                    salary += " " + currency;
+                }
+            } else if (!to.equals("null")) {
+                salary = " до " + to + currency;
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return salary;
     }
 
     private String currencyConverter(String currency) {

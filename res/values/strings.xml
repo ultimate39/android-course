@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HHClient</string>
+    <string name="app_name">HeadHunter</string>
     <string name="title_vacancy">Vacancies</string>
     <string name="find_vacancies">Find vacancies</string>
     <string name="vacancy_text_search">What is search? (skills, position)</string>
     <string name="vacancy_region_search">Region (city, country)</string>
     <string name="message_text_search_null">Fill field for search</string>
+    <string name="message_text_internet_unvailable">Internet is not connected</string>
     <string name="activity_detail_vacancy_label">Show vacancy</string>
     <!-- CURRENCY -->
     <string name="RUR">RUB</string>
