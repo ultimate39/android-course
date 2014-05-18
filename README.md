@@ -13,5 +13,11 @@ Android application for android course
 7) All words in en/rus <br>
 8) Support Android  2.2+ <br>
 
+
 ###Bug inside Android library
 1)BitmapFactory.decode methods have issues. ( Not all jpeg image can be decoded <br> https://code.google.com/p/android/issues/detail?id=6066) <br>
+
+##Screenshots
+![alt tag](https://raw.githubusercontent.com/ultimate39/android-course/master/screenshots/sc2.png)
+![alt tag](https://raw.githubusercontent.com/ultimate39/android-course/master/screenshots/sc3.png)
+![alt tag](https://raw.githubusercontent.com/ultimate39/android-course/master/screenshots/sc1.png)
