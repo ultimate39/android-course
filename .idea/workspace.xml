@@ -45,35 +45,17 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="androidcourse" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="AndroidCourse" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6ca18b0-a0dd-4dfd-9193-32774b67f44c" name="Default" comment="I hope it's last commit&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/area/Area.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/area/AreaAutoCompleteAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/area/AreaDictionaryParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/area/XmlAreaDictionaryParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/areas.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/view_area_autocomplete.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityVacancies.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityVacancies.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/ultimate39/android/androidcourse/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/ultimate39/android/androidcourse/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/CacheStorage.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/CacheStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/FileCache.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/FileCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmentDetailedVacancy.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmentDetailedVacancy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/MemoryCache.java" afterPath="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/MemoryCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" afterPath="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_vacancy_listview.xml" afterPath="$PROJECT_DIR$/res/layout/activity_vacancy_listview.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_vacancy_detail.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_vacancy_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fragment_vacancy_listview.xml" afterPath="$PROJECT_DIR$/res/layout/fragment_vacancy_listview.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values-ru/strings.xml" afterPath="$PROJECT_DIR$/res/values-ru/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml" afterPath="$PROJECT_DIR$/res/layout/view_listitem_vacancy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/view_progressbar.xml" afterPath="$PROJECT_DIR$/res/layout/view_progressbar.xml" />
+    <list default="true" id="e6ca18b0-a0dd-4dfd-9193-32774b67f44c" name="Default" comment="Maybe it's last commit&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshots/sc1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshots/sc2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshots/sc3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/AndroidCourse.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AndroidCourse.iws" />
@@ -154,10 +136,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonVacancyParser.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JsonVacancyParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1231" selection-end="1231" vertical-scroll-proportion="-1.4536083" vertical-offset="1159" max-vertical-offset="2822">
+            <state line="75" column="58" selection-start="2759" selection-end="2759" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2822">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1680#1689#0" expanded="true" />
@@ -170,23 +152,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BitmapCacheDisplayer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/BitmapCacheDisplayer.java">
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="16" selection-start="5567" selection-end="5567" vertical-scroll-proportion="0.0" vertical-offset="2125" max-vertical-offset="3077">
+            <state line="16" column="26" selection-start="415" selection-end="415" vertical-scroll-proportion="0.74931127" vertical-offset="0" max-vertical-offset="391">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XmlAreaDictionaryParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/area/XmlAreaDictionaryParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="9" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="1309">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#746#752#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -206,7 +176,9 @@
         <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/FileCache.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="64" column="8" selection-start="1888" selection-end="1888" vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1139">
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -295,7 +267,6 @@
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/VacancyParser.java" />
         <option value="$PROJECT_DIR$/res/layout/view_progressbar.xml" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/CachedAdapterVacancy.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/assets/areas.xml" />
@@ -315,6 +286,7 @@
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmentDetailedVacancy.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -392,249 +364,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vacancy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="area" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vacancy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cachestorage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="area" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values-ru" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="screenshots" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -650,7 +380,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -670,11 +400,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Работа\AndroidCourses\Lab\AndroidCourse\screenshots" />
       <recent name="D:\Работа\AndroidCourses\Lab\AndroidCourse\assets" />
       <recent name="D:\Работа\AndroidCourses\Lab\AndroidCourse\res\drawable-mdpi" />
       <recent name="D:\Работа\AndroidCourses\Lab\AndroidCourse\res\drawable-hdpi" />
       <recent name="D:\Работа\AndroidCourses\Lab\AndroidCourse\res\drawable-ldpi" />
-      <recent name="D:\Работа\AndroidCourses\Lab\AndroidCourse\res\values-ru" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.AndroidCourse">
@@ -710,6 +440,21 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -923,7 +668,11 @@
       <created>1400427522083</created>
       <updated>1400427522084</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="I hope it's last commit&#10;">
+      <created>1400441154181</created>
+      <updated>1400441154182</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -941,7 +690,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2699187" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27154472" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1011,7 +760,8 @@
     <MESSAGE value="Add detailed activity" />
     <MESSAGE value="Error handling complete" />
     <MESSAGE value="I hope it's last commit&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="I hope it's last commit&#10;" />
+    <MESSAGE value="Maybe it's last commit&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Maybe it's last commit&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1028,18 +778,6 @@
     <option name="showOnlyWarnings" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="442">
-          <folding>
-            <element signature="e#318#336#0" expanded="true" />
-            <element signature="e#593#611#0" expanded="true" />
-            <element signature="e#935#953#0" expanded="true" />
-            <element signature="e#1064#1103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityVacancies.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="374">
@@ -1202,11 +940,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="41" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/VacancyParser.java">
@@ -1397,7 +1130,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/cachestorage/FileCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="8" selection-start="1888" selection-end="1888" vertical-scroll-proportion="0.0" vertical-offset="773" max-vertical-offset="1139">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1451,7 +1186,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1231" selection-end="1231" vertical-scroll-proportion="-1.4536083" vertical-offset="1159" max-vertical-offset="2822">
+        <state line="75" column="58" selection-start="2759" selection-end="2759" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2822">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1680#1689#0" expanded="true" />
@@ -1463,16 +1198,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="26" selection-start="415" selection-end="415" vertical-scroll-proportion="0.74931127" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>AndroidCourse</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
