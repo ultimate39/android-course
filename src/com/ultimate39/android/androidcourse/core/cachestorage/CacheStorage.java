@@ -3,7 +3,7 @@ package com.ultimate39.android.androidcourse.core.cachestorage;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
-import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
+import com.ultimate39.android.androidcourse.ui.vacancy.ActivityVacancies;
 
 /**
  * Created by Влад on 16.05.14.

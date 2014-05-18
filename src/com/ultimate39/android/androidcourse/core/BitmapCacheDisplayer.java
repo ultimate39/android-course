@@ -8,7 +8,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import com.ultimate39.android.androidcourse.R;
 import com.ultimate39.android.androidcourse.core.cachestorage.CacheStorage;
-import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
+import com.ultimate39.android.androidcourse.ui.vacancy.ActivityVacancies;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -18,7 +18,10 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -32,31 +35,45 @@ public class BitmapCacheDisplayer {
     private int mDefaultImageId = -1;
     private ArrayList<ImageLoader> mPoolTasks;
     private boolean mIsCancelDownload = false;
-    public BitmapCacheDisplayer(Context context, String nameOfCacheDirectory) {
+    private static BitmapCacheDisplayer mInstance;
+
+    private BitmapCacheDisplayer(Context context, String nameOfCacheDirectory) {
         mCacheStorage = new CacheStorage(context, nameOfCacheDirectory);
         mPoolTasks = new ArrayList<ImageLoader>(5);
+    }
+
+    public static BitmapCacheDisplayer getInstance(Context context, String nameOfCacheDirectory) {
+        if(mInstance == null) {
+            mInstance = new BitmapCacheDisplayer(context, nameOfCacheDirectory);
+        }
+        return mInstance;
     }
 
     public void displayImage(ImageView imageView, String url) {
         mCacheStorage.printCacheList();
         mIsCancelDownload = false;
-        Bitmap bitmap = mCacheStorage.getBitmapFromMemoryCache(encodeUrl(url));
-        Log.d(ActivityVacancies.LOG_TAG,"Display image");
-        if (bitmap == null) {
-            LazyImageView lazyImageView = new LazyImageView(imageView, url);
-            imageView.setImageResource(R.drawable.default_thumb);
-            ImageLoader imageLoader = new ImageLoader();
-            imageLoader.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, lazyImageView);
-            mPoolTasks.add(imageLoader);
+        if (url != null) {
+            Bitmap bitmap = mCacheStorage.getBitmapFromMemoryCache(encodeUrl(url));
+            Log.d(ActivityVacancies.LOG_TAG, "Display image");
+            if (bitmap == null) {
+                LazyImageView lazyImageView = new LazyImageView(imageView, url);
+                imageView.setImageResource(R.drawable.default_thumb);
+                ImageLoader imageLoader = new ImageLoader();
+                imageLoader.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, lazyImageView);
+                mPoolTasks.add(imageLoader);
+            } else {
+                imageView.setImageBitmap(bitmap);
+            }
         } else {
-            imageView.setImageBitmap(bitmap);
+            imageView.setImageResource(R.drawable.default_thumb);
         }
     }
 
     private String encodeUrl(String url) {
         String encodedUrl = null;
         try {
-            encodedUrl = URLEncoder.encode(url, "UTF-8");
+            if (url != null)
+                encodedUrl = URLEncoder.encode(url, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -70,7 +87,7 @@ public class BitmapCacheDisplayer {
 
     public void stopDisplayImages() {
         mIsCancelDownload = true;
-        for(ImageLoader imageLoader : mPoolTasks) {
+        for (ImageLoader imageLoader : mPoolTasks) {
             imageLoader.cancel(true);
         }
         mPoolTasks.clear();
@@ -103,8 +120,8 @@ public class BitmapCacheDisplayer {
                     mCacheStorage.putBitmap(encodeUrl(mLazyImageView.url), bitmap);
                 }
             }
-            if(bitmap != null)
-             mCacheStorage.putBitmap(encodeUrl(mLazyImageView.url), bitmap);
+            if (bitmap != null)
+                mCacheStorage.putBitmap(encodeUrl(mLazyImageView.url), bitmap);
             return bitmap;
         }
 
@@ -120,21 +137,21 @@ public class BitmapCacheDisplayer {
         private Bitmap downloadImageFromInternet(String url) {
             Bitmap bitmap = null;
             try {
-                Log.d(ActivityVacancies.LOG_TAG, "Start download:"+url);
+                Log.d(ActivityVacancies.LOG_TAG, "Start download:" + url);
                 HttpParams httpParameters = new BasicHttpParams();
                 HttpConnectionParams.setConnectionTimeout(httpParameters, 10000);
                 HttpConnectionParams.setSoTimeout(httpParameters, 7000);
                 HttpClient client = new DefaultHttpClient(httpParameters);
                 HttpResponse response = client.execute(new HttpGet(url));
                 HttpEntity entity = response.getEntity();
-                if(entity.getContentLength() > 300*1000) {
+                if (entity.getContentLength() > 400 * 1000) {
                     return null;
                 }
                 InputStream is = entity.getContent();
                 Log.d(ActivityVacancies.LOG_TAG, "FinishDownload");
                 Log.d(ActivityVacancies.LOG_TAG, "Image is decoded:" + url);
-                if(!isCancelled()) {
-                  bitmap = BitmapFactory.decodeStream(is);
+                if (!isCancelled()) {
+                    bitmap = BitmapFactory.decodeStream(is);
                 }
                 is.close();
             } catch (MalformedURLException e) {

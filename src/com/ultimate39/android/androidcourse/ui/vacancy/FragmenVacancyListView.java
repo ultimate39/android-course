@@ -9,8 +9,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -19,15 +21,15 @@ import com.ultimate39.android.androidcourse.R;
 import com.ultimate39.android.androidcourse.core.vacancy.JsonVacancyParser;
 import com.ultimate39.android.androidcourse.core.vacancy.Vacancy;
 import com.ultimate39.android.androidcourse.core.vacancy.VacancyParser;
-import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Created by Влад on 17.05.14.
@@ -48,13 +50,24 @@ public class FragmenVacancyListView extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
-        mVacancyParser = new JsonVacancyParser();
+        mVacancyParser = new JsonVacancyParser(getActivity());
         mActionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         mActionBar.setDisplayShowTitleEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(true);
         Intent intent = getActivity().getIntent();
         mSearchText = intent.getStringExtra(MainActivity.KEY_TEXT);
         mSearchRegion = intent.getStringExtra(MainActivity.KEY_REGION);
         displayVacancies(mSearchText, mSearchRegion);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                getActivity().finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -81,6 +94,16 @@ public class FragmenVacancyListView extends Fragment {
             mVacanciesAdapter = new CachedAdapterVacancy(getActivity(), new ArrayList<Vacancy>());
             mListViewVacancies.setAdapter(mVacanciesAdapter);
         }
+        mListViewVacancies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ActivityDetailedVacancy.class);
+                String vacancyId = ((Vacancy)mVacanciesAdapter.getItem(position)).getId();
+                intent.putExtra(ActivityVacancies.KEY_VACANCY_ID, vacancyId);
+                Log.d(ActivityVacancies.LOG_TAG, "Vacancy ID:" + vacancyId);
+                startActivity(intent);
+            }
+        });
         return root;
     }
 
@@ -121,9 +144,12 @@ public class FragmenVacancyListView extends Fragment {
 
 
         private String makeRequestForVacancies(String textSearch) {
+            final String URL = "https://api.hh.ru/vacancies";
             HttpClient client = new DefaultHttpClient();
-            String url = String.format("https://api.hh.ru/vacancies?text=%s", textSearch);
-            HttpGet get = new HttpGet(url);
+            HttpGet get = new HttpGet(URL);
+            HttpParams params = new BasicHttpParams();
+            params.setParameter("text", textSearch);
+            get.setParams(params);
             String result = null;
             try {
                 HttpResponse response = client.execute(get);

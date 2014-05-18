@@ -6,4 +6,7 @@
     <string name="vacancy_text_search">Что искать? (должность, навыки)</string>
     <string name="vacancy_region_search">Регион (город, страна)</string>
     <string name="message_text_search_null">Заполните поля для поиска</string>
+    <string name="activity_detail_vacancy_label">Просмотр вакансии</string>
+    <!-- CURRENCY -->
+    <string name="RUR">руб.</string>
 </resources>

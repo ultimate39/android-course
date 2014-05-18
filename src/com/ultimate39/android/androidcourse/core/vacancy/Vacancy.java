@@ -8,6 +8,35 @@ public class Vacancy {
     private String timePublished;
     private String employerName;
     private String id;
+    private String alternateUrl;
+    private String description;
+    private String salary;
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    private String region;
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public String getAlternateUrl() {
+        return alternateUrl;
+    }
+
+    public void setAlternateUrl(String alternateUrl) {
+        this.alternateUrl = alternateUrl;
+    }
 
     public String getDescription() {
         return description;
@@ -16,8 +45,6 @@ public class Vacancy {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    private String description;
 
     public String getId() {
         return id;

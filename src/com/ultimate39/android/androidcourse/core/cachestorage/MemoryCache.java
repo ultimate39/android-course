@@ -3,7 +3,7 @@ package com.ultimate39.android.androidcourse.core.cachestorage;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 import android.util.Log;
-import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
+import com.ultimate39.android.androidcourse.ui.vacancy.ActivityVacancies;
 
 /**
  * Save bitmap files in heap

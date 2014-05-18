@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.ultimate39.android.androidcourse.R;
+import com.ultimate39.android.androidcourse.ui.vacancy.ActivityVacancies;
 
 /**
  * Created by Влад on 17.05.14.
@@ -33,7 +34,7 @@ public class MainActivity extends Activity {
          intent.putExtra(KEY_REGION, mSearchRegion.getText().toString());
          startActivity(intent);
         } else {
-            Toast.makeText(this, getResources().getString(R.string.message_text_search_null), Toast.LENGTH_SHORT);
+            Toast.makeText(this, getResources().getString(R.string.message_text_search_null), Toast.LENGTH_SHORT).show();
         }
     }
 }

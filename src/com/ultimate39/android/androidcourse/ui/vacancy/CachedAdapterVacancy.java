@@ -24,7 +24,7 @@ public class CachedAdapterVacancy extends BaseAdapter {
     public CachedAdapterVacancy(Context context, ArrayList<Vacancy> vacancies) {
         mVacancies = vacancies;
         mContext = context;
-        mBitmapCacheDisplayer = new BitmapCacheDisplayer(context, "images");
+        mBitmapCacheDisplayer = BitmapCacheDisplayer.getInstance(context, "images");
     }
 
     @Override

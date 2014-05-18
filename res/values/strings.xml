@@ -6,4 +6,7 @@
     <string name="vacancy_text_search">What is search? (skills, position)</string>
     <string name="vacancy_region_search">Region (city, country)</string>
     <string name="message_text_search_null">Fill field for search</string>
+    <string name="activity_detail_vacancy_label">Show vacancy</string>
+    <!-- CURRENCY -->
+    <string name="RUR">RUB</string>
 </resources>

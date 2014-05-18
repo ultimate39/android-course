@@ -1,8 +1,8 @@
 package com.ultimate39.android.androidcourse.core.vacancy;
 
+import android.content.Context;
 import android.util.Log;
-import com.ultimate39.android.androidcourse.ui.ActivityVacancies;
-import com.ultimate39.android.androidcourse.ui.MainActivity;
+import com.ultimate39.android.androidcourse.ui.vacancy.ActivityVacancies;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,6 +14,11 @@ import java.util.ArrayList;
  */
 public class JsonVacancyParser implements VacancyParser {
     private int foundedVacancies = 0;
+    private Context mContext;
+
+    public JsonVacancyParser(Context context) {
+        mContext = context;
+    }
 
     public Vacancy parseVacancy(JSONObject jsonVacancy) {
         Vacancy vacancy = new Vacancy();
@@ -25,7 +30,7 @@ public class JsonVacancyParser implements VacancyParser {
             String id = jsonEmployer.getString("id");
             String logoUrl = null;
             if (!jsonEmployer.isNull("logo_urls")) {
-                logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("90");
+                logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
             }
 
             vacancy.setName(name);
@@ -67,11 +72,24 @@ public class JsonVacancyParser implements VacancyParser {
             String name = jsonVacancy.getString("name");
             String description = jsonVacancy.getString("description");
             String publishedAt = jsonVacancy.getString("published_at");
+
             JSONObject jsonEmployer = (JSONObject) jsonVacancy.get("employer");
             String employerName = jsonEmployer.getString("name");
             String id = jsonEmployer.getString("id");
-            String logoUrl = null;
 
+            JSONObject jsonSalary = (JSONObject) jsonVacancy.get("salary");
+            String from = jsonSalary.getString("from");
+            String to = jsonSalary.getString("to");
+            String currency = currencyConverter(jsonSalary.getString("currency"));
+            String salary = "";
+            if(from != null) {
+                salary += from;
+                if(to != null) {
+                    salary+= " - " +to + " "  + currency;
+                }
+            }
+
+            String logoUrl = null;
             if (!jsonEmployer.isNull("logo_urls")) {
                 logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
             }
@@ -82,6 +100,7 @@ public class JsonVacancyParser implements VacancyParser {
             vacancy.setLogoUrl(logoUrl);
             vacancy.setId(id);
             vacancy.setDescription(description);
+            vacancy.setSalary(salary);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -91,5 +110,15 @@ public class JsonVacancyParser implements VacancyParser {
     @Override
     public int getFoundedVacancies() {
         return foundedVacancies;
+    }
+
+    private String currencyConverter(String currency) {
+        try {
+            return mContext.getResources().getString(mContext.getResources().getIdentifier(currency, "string", mContext.getPackageName()));
+        }catch (Exception e) {
+            Log.e(ActivityVacancies.LOG_TAG, "Resource not found:" +currency);
+            e.printStackTrace();
+        }
+        return null;
     }
 }
