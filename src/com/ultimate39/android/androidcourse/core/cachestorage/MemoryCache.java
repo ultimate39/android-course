@@ -18,7 +18,6 @@ public class MemoryCache {
     }
 
     public void addBitmapToMemoryCache(String key, Bitmap bitmap) {
-        Log.d(ActivityVacancies.LOG_TAG, "Put bitmap"+key);
         if (getBitmapFromMemoryCache(key) == null && bitmap != null) {
             mMemoryCache.put(key, bitmap);
         }
@@ -35,7 +34,7 @@ public class MemoryCache {
     }
 
     public void printCacheList() {
-        Log.d(ActivityVacancies.LOG_TAG, mMemoryCache.putCount()+"");
+        Log.d(ActivityVacancies.LOG_TAG, mMemoryCache.putCount() + "");
     }
 
 }

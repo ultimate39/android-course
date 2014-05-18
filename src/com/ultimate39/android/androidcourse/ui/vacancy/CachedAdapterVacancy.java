@@ -1,6 +1,5 @@
 package com.ultimate39.android.androidcourse.ui.vacancy;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,8 +34,8 @@ public class CachedAdapterVacancy extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if(isShowLoading) {
-         return mVacancies.size() + 1;
+        if (isShowLoading) {
+            return mVacancies.size() + 1;
         }
         return mVacancies.size();
     }
@@ -58,7 +57,7 @@ public class CachedAdapterVacancy extends BaseAdapter {
 
     @Override
     public boolean isEnabled(int position) {
-        if(position == mVacancies.size()) {
+        if (position == mVacancies.size()) {
             return false;
         }
         return true;
@@ -79,8 +78,8 @@ public class CachedAdapterVacancy extends BaseAdapter {
             if (vacancy.getLogoUrl() != null) {
                 mBitmapCacheDisplayer.displayImage(vh.ivLogo, vacancy.getLogoUrl());
             }
-        } else if(isShowLoading) {
-            convertView  = inflater.inflate(R.layout.view_progressbar, parent, false);
+        } else if (isShowLoading) {
+            convertView = inflater.inflate(R.layout.view_progressbar, parent, false);
         }
         return convertView;
     }

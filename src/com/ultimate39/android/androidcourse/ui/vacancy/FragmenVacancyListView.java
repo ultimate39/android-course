@@ -35,9 +35,7 @@ import java.util.ArrayList;
  */
 public class FragmenVacancyListView extends Fragment {
     private ListView mListViewVacancies;
-    private EditText mEditTextSearch;
     private VacancyParser mVacancyParser;
-    private Button mButton;
     private CachedAdapterVacancy mVacanciesAdapter;
     private ActionBar mActionBar;
     private String mSearchText;
@@ -49,18 +47,27 @@ public class FragmenVacancyListView extends Fragment {
     boolean isLoaded = false;
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mVacancyParser = new JsonVacancyParser(getActivity());
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
         setHasOptionsMenu(true);
-        mVacancyParser = new JsonVacancyParser(getActivity());
         mActionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         mActionBar.setDisplayShowTitleEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);
+        mActionBar.setSubtitle(getResources().getString(R.string.title_vacancy) + ":" + mVacancyParser.getFoundedVacancies());
         Intent intent = getActivity().getIntent();
         mSearchText = intent.getStringExtra(MainActivity.KEY_TEXT);
-        mSearchRegion = intent.getStringExtra(MainActivity.KEY_REGION);
-        displayVacancies(mSearchText, mSearchRegion, mPageOfVacancies);
+        mSearchRegion = intent.getStringExtra(MainActivity.KEY_AREA);
+        if (mVacanciesAdapter.getCount() == 0) {
+            displayVacancies(mSearchText, mSearchRegion, mPageOfVacancies);
+        }
+        isLoaded = false;
     }
 
     private void initializeContentError(View view) {
@@ -69,15 +76,15 @@ public class FragmenVacancyListView extends Fragment {
         repeatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if(InternetUtils.isInternetAvailable(getActivity())) {
-                mPageOfVacancies = 0;
-                mVacanciesAdapter.mVacancies.clear();
-                showProgressBar(true);
-                showErrorContent(false);
-                displayVacancies(mSearchText, mSearchRegion, mPageOfVacancies);
-               } else {
-                Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.message_text_internet_unvailable), Toast.LENGTH_SHORT).show();
-               }
+                if (InternetUtils.isInternetAvailable(getActivity())) {
+                    mPageOfVacancies = 0;
+                    mVacanciesAdapter.mVacancies.clear();
+                    showProgressBar(true);
+                    showErrorContent(false);
+                    displayVacancies(mSearchText, mSearchRegion, mPageOfVacancies);
+                } else {
+                    Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.message_text_internet_unvailable), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -122,7 +129,6 @@ public class FragmenVacancyListView extends Fragment {
                 Vacancy vacancy = ((Vacancy) mVacanciesAdapter.getItem(position));
                 intent.putExtra(ActivityVacancies.KEY_VACANCY_ID, vacancy.getId());
                 intent.putExtra(ActivityVacancies.KEY_LOGO_URL, vacancy.getLogoUrl());
-                Log.d(ActivityVacancies.LOG_TAG, "Vacancy ID:" + vacancy.getId() + " " + vacancy.getName());
                 BitmapCacheDisplayer.getInstance(getActivity(), "images").stopDisplayImages();
                 startActivity(intent);
             }
@@ -130,11 +136,14 @@ public class FragmenVacancyListView extends Fragment {
         return root;
     }
 
+    public void displayVacancies(String searchText, int page) {
+        displayVacancies(searchText, null, page);
+    }
+
     public void displayVacancies(String searchText, String searchRegion, int page) {
         AsyncTaskVacancyDownloader task = new AsyncTaskVacancyDownloader();
         mVacanciesAdapter.stopDisplayImages();
-        task.execute(searchText, Integer.toString(page));
-
+        task.execute(searchText, searchRegion, Integer.toString(page));
     }
 
     private void showProgressBar(boolean isShow) {
@@ -162,7 +171,7 @@ public class FragmenVacancyListView extends Fragment {
         protected ArrayList<Vacancy> doInBackground(String... params) {
             ArrayList<Vacancy> vacancies = null;
             try {
-                String source = makeRequestForVacancies(params[0], params[1]);
+                String source = makeRequestForVacancies(params[0], params[1], params[2]);
                 Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Download JSON text");
                 vacancies = mVacancyParser.parseVacancies(source);
                 Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Finished");
@@ -175,7 +184,7 @@ public class FragmenVacancyListView extends Fragment {
         }
 
 
-        private String makeRequestForVacancies(String textSearch, String page) {
+        private String makeRequestForVacancies(String textSearch, String area, String page) {
 
             HttpClient client = new DefaultHttpClient();
             String url = "";
@@ -185,7 +194,10 @@ public class FragmenVacancyListView extends Fragment {
                 e.printStackTrace();
             }
 
-            Log.d(ActivityVacancies.LOG_TAG, "DASDSDADA" + url);
+            if (area != null) {
+                url += "&area=" + area;
+            }
+
             HttpGet get = new HttpGet(url);
             String result = null;
             try {
@@ -247,11 +259,12 @@ public class FragmenVacancyListView extends Fragment {
 
         @Override
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            Log.d(ActivityVacancies.LOG_TAG, firstVisibleItem + visibleItemCount + " " + totalItemCount + mPageOfVacancies);
             if (firstVisibleItem + visibleItemCount == totalItemCount && totalItemCount != 0) {
-                if (!isLoaded && mVacancyParser.getPages() >= mPageOfVacancies) {
+                Log.d(ActivityVacancies.LOG_TAG, mVacancyParser.getPages() + " " + mPageOfVacancies);
+                if (!isLoaded && (mVacancyParser.getPages() >= mPageOfVacancies)) {
                     displayVacancies(mSearchText, mSearchRegion, ++mPageOfVacancies);
                     isLoaded = true;
-                    Log.d(ActivityVacancies.LOG_TAG, "last item");
                 }
             }
         }

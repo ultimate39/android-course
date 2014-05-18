@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              >
+    >
 
     <FrameLayout
         android:id="@+id/progressbar"
@@ -81,7 +81,6 @@
                     />
 
 
-
             </RelativeLayout>
 
             <RelativeLayout
@@ -89,6 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/content_header">
+
                 <ImageView
                     android:id="@+id/separateline"
                     android:layout_width="match_parent"

@@ -26,7 +26,7 @@ public class JsonVacancyParser implements VacancyParser {
         try {
             String name = jsonVacancy.getString("name");
             String id = jsonVacancy.getString("id");
-            String publishedAt = jsonVacancy.getString("published_at");
+            String publishedAt = convertTime(jsonVacancy.getString("published_at"));
             JSONObject jsonEmployer = (JSONObject) jsonVacancy.get("employer");
             String employerName = jsonEmployer.getString("name");
             String logoUrl = null;
@@ -73,7 +73,7 @@ public class JsonVacancyParser implements VacancyParser {
             String name = jsonVacancy.getString("name");
             String description = jsonVacancy.getString("description");
             String alternateUrl = jsonVacancy.getString("alternate_url");
-            String publishedAt = jsonVacancy.getString("published_at");
+            String publishedAt = convertTime(jsonVacancy.getString("published_at"));
             String id = jsonVacancy.getString("id");
 
             JSONObject jsonEmployer = (JSONObject) jsonVacancy.get("employer");
@@ -133,6 +133,19 @@ public class JsonVacancyParser implements VacancyParser {
             e.printStackTrace();
         }
         return salary;
+    }
+
+    private String convertTime(String time) {
+        char[] chars = time.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for (char c : time.toCharArray()) {
+            if (c == 'T') {
+                break;
+            } else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 
     private String currencyConverter(String currency) {

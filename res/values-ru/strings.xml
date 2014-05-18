@@ -10,6 +10,10 @@
     <string name="activity_detail_vacancy_label">Просмотр вакансии</string>
     <string name="message_text_internet_unvailable">Не удается выполнить поиск, интернет не доступен.</string>
     <string name="progressbar_loading">Загрузка...</string>
+    <string name="service_is_unvailable">Сервис не доступен</string>
+    <string name="fail_load_vacancies">Не удалось загрузить список вакансий</string>
+    <string name="button_repeat">Попробовать снова</string>
+    <string name="choose_region">Выберите регион</string>
     <!-- CURRENCY -->
     <string name="RUR">руб.</string>
     <string name="USD">$</string>

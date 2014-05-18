@@ -9,6 +9,10 @@
     <string name="message_text_internet_unvailable">Internet is not connected</string>
     <string name="activity_detail_vacancy_label">Show vacancy</string>
     <string name="progressbar_loading">Loading...</string>
+    <string name="service_is_unvailable">Service is unvailable</string>
+    <string name="fail_load_vacancies">Vacancies are not downloaded</string>
+    <string name="button_repeat">Repeat</string>
+    <string name="choose_region">Choose region</string>
     <!-- CURRENCY -->
     <string name="RUR">RUB</string>
     <string name="USD">USD</string>

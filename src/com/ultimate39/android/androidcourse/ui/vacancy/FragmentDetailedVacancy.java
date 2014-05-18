@@ -1,19 +1,21 @@
 package com.ultimate39.android.androidcourse.ui.vacancy;
 
-import android.app.Fragment;
+
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.text.method.MovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,9 +29,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
-/**
- * Created by Влад on 18.05.14.
- */
 public class FragmentDetailedVacancy extends Fragment {
     private View mProgressBar;
     private View mContent;
@@ -115,10 +114,9 @@ public class FragmentDetailedVacancy extends Fragment {
             setDescription(vacancy.getDescription());
         }
 
-        private String textToLink (String text, String link) {
+        private String textToLink(String text, String link) {
             String result = String.format("<a href=\"%s\">%s</a>", link, text);
-            Log.d(ActivityVacancies.LOG_TAG, "REsult:" + result);
-            return  result;
+            return result;
         }
 
 
@@ -126,7 +124,11 @@ public class FragmentDetailedVacancy extends Fragment {
             final String mimeType = "text/html";
             final String encoding = "UTF-8";
             mVacancyDescription.loadDataWithBaseURL("", description, mimeType, encoding, "");
-            mVacancyDescription.setBackgroundColor(0x00000000);
+            mVacancyDescription.setBackgroundColor(Color.argb(1, 0, 0, 0));
+            mVacancyDescription.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+            mVacancyDescription.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+            mVacancyDescription.setFocusable(false);
+            mVacancyDescription.setFocusableInTouchMode(false);
         }
     }
 
@@ -152,13 +154,13 @@ public class FragmentDetailedVacancy extends Fragment {
         protected Vacancy doInBackground(String... params) {
             Vacancy vacancy = null;
             try {
-            String source = makeRequestForDetailedVacancy(params[0]);
-            Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Download JSON text");
-            JsonVacancyParser vacancyParser = new JsonVacancyParser(getActivity());
-            vacancy = vacancyParser.parseDetailedVacancy(source);
-            Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Finished");
-            Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Create ListView");
-            } catch (Exception e)  {
+                String source = makeRequestForDetailedVacancy(params[0]);
+                Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Download JSON text");
+                JsonVacancyParser vacancyParser = new JsonVacancyParser(getActivity());
+                vacancy = vacancyParser.parseDetailedVacancy(source);
+                Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Finished");
+                Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Create ListView");
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return vacancy;
@@ -182,10 +184,10 @@ public class FragmentDetailedVacancy extends Fragment {
         @Override
         protected void onPostExecute(Vacancy vacancy) {
             try {
-            mVacancy = vacancy;
-            mViewHolder = new ViewHolderVacancy();
-            mViewHolder.setContent(vacancy);
-            showProgressBar(false);
+                mVacancy = vacancy;
+                mViewHolder = new ViewHolderVacancy();
+                mViewHolder.setContent(vacancy);
+                showProgressBar(false);
             } catch (Exception e) {
                 e.printStackTrace();
             }

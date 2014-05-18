@@ -62,8 +62,8 @@ public class FileCache {
 
     public void printCacheList() {
         File[] files = mCacheDirectory.listFiles();
-        Log.d(ActivityVacancies.LOG_TAG,"------------------------------");
-        for(File file:files) {
+        Log.d(ActivityVacancies.LOG_TAG, "------------------------------");
+        for (File file : files) {
             Log.d(ActivityVacancies.LOG_TAG, file.getName());
         }
     }

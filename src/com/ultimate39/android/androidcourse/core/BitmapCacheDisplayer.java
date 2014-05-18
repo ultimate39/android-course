@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.util.Log;
 import android.widget.ImageView;
 import com.ultimate39.android.androidcourse.R;
@@ -43,7 +44,7 @@ public class BitmapCacheDisplayer {
     }
 
     public static BitmapCacheDisplayer getInstance(Context context, String nameOfCacheDirectory) {
-        if(mInstance == null) {
+        if (mInstance == null) {
             mInstance = new BitmapCacheDisplayer(context, nameOfCacheDirectory);
         }
         return mInstance;
@@ -54,12 +55,13 @@ public class BitmapCacheDisplayer {
         mIsCancelDownload = false;
         if (url != null) {
             Bitmap bitmap = mCacheStorage.getBitmapFromMemoryCache(encodeUrl(url));
-            Log.d(ActivityVacancies.LOG_TAG, "Display image");
             if (bitmap == null) {
                 LazyImageView lazyImageView = new LazyImageView(imageView, url);
                 imageView.setImageResource(R.drawable.default_thumb);
                 ImageLoader imageLoader = new ImageLoader();
-                imageLoader.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, lazyImageView);
+                if (Build.VERSION.SDK_INT >= 11) {
+                    imageLoader.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, lazyImageView);
+                }
                 mPoolTasks.add(imageLoader);
             } else {
                 imageView.setImageBitmap(bitmap);

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:gravity="center"
-            android:text="Сервис не доступен"/>
+            android:text="@string/service_is_unvailable"/>
 
         <TextView
             android:id="@+id/tv_fail"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Не удалось загрузить список вакансий"
+            android:text="@string/fail_load_vacancies"
             android:layout_below="@id/tv_error"/>
 
         <Button
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_marginTop="5dp"
             android:textSize="15dp"
-            android:text="Попробовать снова"
+            android:text="@string/button_repeat"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_fail"/>
     </RelativeLayout>
@@ -44,7 +44,7 @@
         android:id="@+id/vacancies_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ListView
             android:id="@+id/lv_vacancies"

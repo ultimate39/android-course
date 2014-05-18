@@ -5,10 +5,11 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-<fragment
-    android:id="@+id/fragment_content"
-    class="com.ultimate39.android.androidcourse.ui.vacancy.FragmenVacancyListView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:layout="@layout/fragment_vacancy_listview"/>
+
+    <fragment
+        android:id="@+id/fragment_content"
+        class="com.ultimate39.android.androidcourse.ui.vacancy.FragmenVacancyListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_vacancy_listview"/>
 </LinearLayout>
