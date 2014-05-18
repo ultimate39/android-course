@@ -13,5 +13,7 @@ public interface VacancyParser {
 
     public int getFoundedVacancies();
 
+    public int getPages();
+
 
 }

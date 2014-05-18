@@ -13,18 +13,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.ultimate39.android.androidcourse.core.BitmapCacheDisplayer;
-import com.ultimate39.android.androidcourse.ui.MainActivity;
 import com.ultimate39.android.androidcourse.R;
+import com.ultimate39.android.androidcourse.core.BitmapCacheDisplayer;
+import com.ultimate39.android.androidcourse.core.InternetUtils;
 import com.ultimate39.android.androidcourse.core.vacancy.JsonVacancyParser;
 import com.ultimate39.android.androidcourse.core.vacancy.Vacancy;
 import com.ultimate39.android.androidcourse.core.vacancy.VacancyParser;
+import com.ultimate39.android.androidcourse.ui.MainActivity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -45,6 +44,9 @@ public class FragmenVacancyListView extends Fragment {
     private String mSearchRegion;
     private View mProgressBar;
     private View mListViewContent;
+    private View mContentError;
+    private int mPageOfVacancies = 0;
+    boolean isLoaded = false;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -58,13 +60,41 @@ public class FragmenVacancyListView extends Fragment {
         Intent intent = getActivity().getIntent();
         mSearchText = intent.getStringExtra(MainActivity.KEY_TEXT);
         mSearchRegion = intent.getStringExtra(MainActivity.KEY_REGION);
-        displayVacancies(mSearchText, mSearchRegion);
+        displayVacancies(mSearchText, mSearchRegion, mPageOfVacancies);
     }
 
+    private void initializeContentError(View view) {
+        Button repeatButton = (Button) view.findViewById(R.id.btn_service_fail);
+        mContentError = view.findViewById(R.id.content_error);
+        repeatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               if(InternetUtils.isInternetAvailable(getActivity())) {
+                mPageOfVacancies = 0;
+                mVacanciesAdapter.mVacancies.clear();
+                showProgressBar(true);
+                showErrorContent(false);
+                displayVacancies(mSearchText, mSearchRegion, mPageOfVacancies);
+               } else {
+                Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.message_text_internet_unvailable), Toast.LENGTH_SHORT).show();
+               }
+            }
+        });
+    }
+
+    private void showErrorContent(boolean isShow) {
+        if (isShow) {
+            mContentError.setVisibility(View.VISIBLE);
+            mListViewContent.setVisibility(View.GONE);
+            mProgressBar.setVisibility(View.GONE);
+        } else {
+            mContentError.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 getActivity().finish();
         }
@@ -74,21 +104,11 @@ public class FragmenVacancyListView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_vacancy_listview, container, false);
-        mListViewVacancies = (ListView) root.findViewById(R.id.lv_vacancies);        mListViewVacancies.setOnScr
-        //mEditTextSearch = (EditText) root.findViewById(R.id.et_search_text);
-        //mButton = (Button) root.findViewById(R.id.btn_search);
-        /*
-        mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-           //     FragmenVacancyListView.this.test(v);
-            }
-        });
-        */
-
+        mListViewVacancies = (ListView) root.findViewById(R.id.lv_vacancies);
+        initializeContentError(root);
         mListViewContent = root.findViewById(R.id.vacancies_content);
         mProgressBar = root.findViewById(R.id.progressbar);
-
+        mListViewVacancies.setOnScrollListener(new SwipeDownToRefresh());
         if (mVacanciesAdapter != null) {
             mListViewVacancies.setAdapter(mVacanciesAdapter);
         } else {
@@ -99,7 +119,7 @@ public class FragmenVacancyListView extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ActivityDetailedVacancy.class);
-                Vacancy vacancy = ((Vacancy)mVacanciesAdapter.getItem(position));
+                Vacancy vacancy = ((Vacancy) mVacanciesAdapter.getItem(position));
                 intent.putExtra(ActivityVacancies.KEY_VACANCY_ID, vacancy.getId());
                 intent.putExtra(ActivityVacancies.KEY_LOGO_URL, vacancy.getLogoUrl());
                 Log.d(ActivityVacancies.LOG_TAG, "Vacancy ID:" + vacancy.getId() + " " + vacancy.getName());
@@ -110,24 +130,28 @@ public class FragmenVacancyListView extends Fragment {
         return root;
     }
 
-    public void displayVacancies(String searchText, String searchRegion) {
+    public void displayVacancies(String searchText, String searchRegion, int page) {
         AsyncTaskVacancyDownloader task = new AsyncTaskVacancyDownloader();
         mVacanciesAdapter.stopDisplayImages();
-        task.execute(searchText);
+        task.execute(searchText, Integer.toString(page));
 
     }
 
     private void showProgressBar(boolean isShow) {
-        if(isShow){
-            mProgressBar.setVisibility(View.VISIBLE);
-            mListViewContent.setVisibility(View.GONE);
-        } else {
-            mProgressBar.setVisibility(View.GONE);
-            mListViewContent.setVisibility(View.VISIBLE);
+        if (mVacanciesAdapter.mVacancies.size() == 0) {
+            if (isShow) {
+                showProgressBar(false);
+                mProgressBar.setVisibility(View.VISIBLE);
+                mListViewContent.setVisibility(View.GONE);
+            } else {
+                mProgressBar.setVisibility(View.GONE);
+                mListViewContent.setVisibility(View.VISIBLE);
+            }
         }
     }
 
     class AsyncTaskVacancyDownloader extends AsyncTask<String, String, ArrayList<Vacancy>> {
+        boolean isError = false;
 
         @Override
         protected void onPreExecute() {
@@ -136,22 +160,27 @@ public class FragmenVacancyListView extends Fragment {
 
         @Override
         protected ArrayList<Vacancy> doInBackground(String... params) {
-            String source = makeRequestForVacancies(params[0]);
-            Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Download JSON text");
-            ArrayList<Vacancy> vacancies = mVacancyParser.parseVacancies(source);
-            Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Finished");
-            Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Create ListView");
-            mVacanciesAdapter.mVacancies = vacancies;
+            ArrayList<Vacancy> vacancies = null;
+            try {
+                String source = makeRequestForVacancies(params[0], params[1]);
+                Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Download JSON text");
+                vacancies = mVacancyParser.parseVacancies(source);
+                Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Finished");
+                Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Create ListView");
+            } catch (Exception e) {
+                isError = true;
+                e.printStackTrace();
+            }
             return vacancies;
         }
 
 
-        private String makeRequestForVacancies(String textSearch) {
+        private String makeRequestForVacancies(String textSearch, String page) {
 
             HttpClient client = new DefaultHttpClient();
             String url = "";
             try {
-                 url = "https://api.hh.ru/vacancies?text=" + URLEncoder.encode(textSearch, "UTF-8");
+                url = "https://api.hh.ru/vacancies?text=" + URLEncoder.encode(textSearch, "UTF-8") + "&page=" + page;
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -165,16 +194,37 @@ public class FragmenVacancyListView extends Fragment {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             return result;
         }
 
         @Override
         protected void onPostExecute(ArrayList<Vacancy> vacancies) {
-            showProgressBar(false);
-            mActionBar.setTitle(mSearchText);
-            mActionBar.setSubtitle(getActivity().getResources().getString(R.string.title_vacancy)+":"+mVacancyParser.getFoundedVacancies());
-            Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Finished");
-            mVacanciesAdapter.notifyDataSetChanged();
+            if (!isError) {
+                try {
+                    showProgressBar(false);
+                    showErrorContent(false);
+                    mActionBar.setTitle(mSearchText);
+                    mActionBar.setSubtitle(getActivity().getResources().getString(R.string.title_vacancy) + ":" + mVacancyParser.getFoundedVacancies());
+                    Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Finished");
+                    if (mVacanciesAdapter.mVacancies.size() > 0) {
+                        mVacanciesAdapter.mVacancies.addAll(vacancies);
+                    } else {
+                        mVacanciesAdapter.mVacancies = vacancies;
+                    }
+                    isLoaded = false;
+                    if (mPageOfVacancies == mVacancyParser.getPages()) {
+                        mVacanciesAdapter.stopShowLoading();
+                    }
+                    mVacanciesAdapter.notifyDataSetChanged();
+                    mVacanciesAdapter.notifyDataSetInvalidated();
+                } catch (Exception e) {
+                    showErrorContent(true);
+                    e.printStackTrace();
+                }
+            } else {
+                showErrorContent(true);
+            }
         }
 
         private void printVacancy(Vacancy vacancy) {
@@ -197,15 +247,15 @@ public class FragmenVacancyListView extends Fragment {
 
         @Override
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-            if(firstVisibleItem+visibleItemCount == totalItemCount && totalItemCount!=0)
-            {
-                if(flag_loading == false)
-                {
-                    flag_loading = true;
-                    additems();
+            if (firstVisibleItem + visibleItemCount == totalItemCount && totalItemCount != 0) {
+                if (!isLoaded && mVacancyParser.getPages() >= mPageOfVacancies) {
+                    displayVacancies(mSearchText, mSearchRegion, ++mPageOfVacancies);
+                    isLoaded = true;
+                    Log.d(ActivityVacancies.LOG_TAG, "last item");
                 }
             }
         }
-        }
+
     }
+
 }

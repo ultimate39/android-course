@@ -150,13 +150,17 @@ public class FragmentDetailedVacancy extends Fragment {
 
         @Override
         protected Vacancy doInBackground(String... params) {
-
+            Vacancy vacancy = null;
+            try {
             String source = makeRequestForDetailedVacancy(params[0]);
             Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Download JSON text");
             JsonVacancyParser vacancyParser = new JsonVacancyParser(getActivity());
-            Vacancy vacancy = vacancyParser.parseDetailedVacancy(source);
+            vacancy = vacancyParser.parseDetailedVacancy(source);
             Log.d(ActivityVacancies.LOG_TAG, "Step 1 - Finished");
             Log.d(ActivityVacancies.LOG_TAG, "Step 2 - Create ListView");
+            } catch (Exception e)  {
+                e.printStackTrace();
+            }
             return vacancy;
         }
 
@@ -177,11 +181,14 @@ public class FragmentDetailedVacancy extends Fragment {
 
         @Override
         protected void onPostExecute(Vacancy vacancy) {
+            try {
             mVacancy = vacancy;
             mViewHolder = new ViewHolderVacancy();
             mViewHolder.setContent(vacancy);
             showProgressBar(false);
-
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         private void printVacancy(Vacancy vacancy) {

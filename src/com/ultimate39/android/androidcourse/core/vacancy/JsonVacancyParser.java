@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class JsonVacancyParser implements VacancyParser {
     private int foundedVacancies = 0;
+    private int foundedPages = 0;
     private Context mContext;
 
     public JsonVacancyParser(Context context) {
@@ -52,6 +53,7 @@ public class JsonVacancyParser implements VacancyParser {
             JSONObject object = new JSONObject(source);
             System.out.println("TEXT REQUEST:" + source);
             foundedVacancies = object.getInt("found");
+            foundedPages = object.getInt("pages");
             JSONArray jsonVacancies = (JSONArray) object.get("items");
             for (int item = 0; item < jsonVacancies.length(); item++) {
                 object = (JSONObject) jsonVacancies.get(item);
@@ -60,7 +62,6 @@ public class JsonVacancyParser implements VacancyParser {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         return vacancies;
     }
 
@@ -104,6 +105,11 @@ public class JsonVacancyParser implements VacancyParser {
     @Override
     public int getFoundedVacancies() {
         return foundedVacancies;
+    }
+
+    @Override
+    public int getPages() {
+        return foundedPages;
     }
 
     private String jsonSalaryToString(JSONObject jsonSalary) {

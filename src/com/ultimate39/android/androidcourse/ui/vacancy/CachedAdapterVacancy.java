@@ -1,5 +1,6 @@
 package com.ultimate39.android.androidcourse.ui.vacancy;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class CachedAdapterVacancy extends BaseAdapter {
     public ArrayList<Vacancy> mVacancies;
     private Context mContext;
     private BitmapCacheDisplayer mBitmapCacheDisplayer;
+    private boolean isShowLoading = true;
 
     public CachedAdapterVacancy(Context context, ArrayList<Vacancy> vacancies) {
         mVacancies = vacancies;
@@ -27,8 +29,15 @@ public class CachedAdapterVacancy extends BaseAdapter {
         mBitmapCacheDisplayer = BitmapCacheDisplayer.getInstance(context, "images");
     }
 
+    public void stopShowLoading() {
+        isShowLoading = false;
+    }
+
     @Override
     public int getCount() {
+        if(isShowLoading) {
+         return mVacancies.size() + 1;
+        }
         return mVacancies.size();
     }
 
@@ -43,22 +52,35 @@ public class CachedAdapterVacancy extends BaseAdapter {
     }
 
 
-    public void stopDisplayImages(){
+    public void stopDisplayImages() {
         mBitmapCacheDisplayer.stopDisplayImages();
     }
+
+    @Override
+    public boolean isEnabled(int position) {
+        if(position == mVacancies.size()) {
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.view_listitem_vacancy, parent, false);
-        setViewHolder(convertView);
-        final ViewHolder vh = (ViewHolder) convertView.getTag();
-        Vacancy vacancy = mVacancies.get(position);
-        vh.tvName.setText(vacancy.getName());
-        vh.tvPublishedTime.setText(vacancy.getTimePublished());
-        vh.tvEmployerName.setText(vacancy.getEmployerName());
-        if (vacancy.getLogoUrl() != null) {
-            mBitmapCacheDisplayer.displayImage(vh.ivLogo, vacancy.getLogoUrl());
+        if (position != mVacancies.size()) {
+            convertView = inflater.inflate(R.layout.view_listitem_vacancy, parent, false);
+            setViewHolder(convertView);
+            final ViewHolder vh = (ViewHolder) convertView.getTag();
+            Vacancy vacancy = mVacancies.get(position);
+            vh.tvName.setText(vacancy.getName());
+            vh.tvPublishedTime.setText(vacancy.getTimePublished());
+            vh.tvEmployerName.setText(vacancy.getEmployerName());
+            if (vacancy.getLogoUrl() != null) {
+                mBitmapCacheDisplayer.displayImage(vh.ivLogo, vacancy.getLogoUrl());
+            }
+        } else if(isShowLoading) {
+            convertView  = inflater.inflate(R.layout.view_progressbar, parent, false);
         }
         return convertView;
     }

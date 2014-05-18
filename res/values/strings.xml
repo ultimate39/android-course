@@ -8,6 +8,7 @@
     <string name="message_text_search_null">Fill field for search</string>
     <string name="message_text_internet_unvailable">Internet is not connected</string>
     <string name="activity_detail_vacancy_label">Show vacancy</string>
+    <string name="progressbar_loading">Loading...</string>
     <!-- CURRENCY -->
     <string name="RUR">RUB</string>
     <string name="USD">USD</string>

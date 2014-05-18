@@ -5,43 +5,52 @@
               android:layout_height="match_parent"
     >
 
-    <LinearLayout
-        android:id="@+id/vacancies_content"
-        android:orientation="vertical"
+    <RelativeLayout
+        android:id="@+id/content_error"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible">
+        android:gravity="center">
 
-        <!--
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_error"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Сервис не доступен"/>
 
-            <EditText
-                android:id="@+id/et_search_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="android"
-                android:layout_weight="0.8"/>
+        <TextView
+            android:id="@+id/tv_fail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Не удалось загрузить список вакансий"
+            android:layout_below="@id/tv_error"/>
 
-            <Button
-                android:id="@+id/btn_search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Поиск"
-                android:layout_weight="0.2"
-                />
-        </LinearLayout>
-          -->
+        <Button
+            android:id="@+id/btn_service_fail"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
+            android:text="Попробовать снова"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fail"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/vacancies_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
         <ListView
             android:id="@+id/lv_vacancies"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <ProgressBar
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:layout_height="match_parent"/>
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/progressbar"
@@ -53,6 +62,5 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"/>
     </FrameLayout>
-
 </LinearLayout>
 

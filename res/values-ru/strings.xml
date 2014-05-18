@@ -9,6 +9,7 @@
     <string name="message_text_search_null">Заполните поля для поиска</string>
     <string name="activity_detail_vacancy_label">Просмотр вакансии</string>
     <string name="message_text_internet_unvailable">Не удается выполнить поиск, интернет не доступен.</string>
+    <string name="progressbar_loading">Загрузка...</string>
     <!-- CURRENCY -->
     <string name="RUR">руб.</string>
     <string name="USD">$</string>
