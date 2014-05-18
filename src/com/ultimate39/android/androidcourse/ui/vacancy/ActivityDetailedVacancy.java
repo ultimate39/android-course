@@ -77,6 +77,8 @@ public class ActivityDetailedVacancy extends ActionBarActivity {
             mVacancyName.setText(vacancy.getName());
             if(vacancy.getSalary() != null) {
              mVacancySalary.setText(vacancy.getSalary());
+            } else {
+             mVacancySalary.setVisibility(View.GONE);
             }
             mVacancyEmployer.setText(vacancy.getEmployerName());
             mVacancyPublishedAt.setText(vacancy.getTimePublished());

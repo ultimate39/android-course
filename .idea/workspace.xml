@@ -140,19 +140,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="67" selection-start="313" selection-end="313" vertical-scroll-proportion="0.2802198" vertical-offset="0" max-vertical-offset="364">
+            <state line="6" column="67" selection-start="313" selection-end="313" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="204">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_vacancy_detail.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="activity_vacancy_detail.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="21" selection-start="3630" selection-end="3630" vertical-scroll-proportion="-44.16" vertical-offset="443" max-vertical-offset="1887">
+            <state line="80" column="57" selection-start="3152" selection-end="3152" vertical-scroll-proportion="0.33554816" vertical-offset="1259" max-vertical-offset="1887">
               <folding />
             </state>
           </provider>
@@ -261,10 +261,10 @@
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/core/vacancy/JsonVacancyParser.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/values-ru/strings.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java" />
         <option value="$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml" />
       </list>
     </option>
   </component>
@@ -830,7 +830,11 @@
       <created>1400402301902</created>
       <updated>1400402301902</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add detailed activity">
+      <created>1400404352681</created>
+      <updated>1400404352681</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -840,7 +844,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33282906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33282906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -857,7 +861,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25037822" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1275,15 +1279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="43" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="2839">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/FragmenVacancyListView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="21" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="3247">
@@ -1303,16 +1298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="21" selection-start="3630" selection-end="3630" vertical-scroll-proportion="-44.16" vertical-offset="443" max-vertical-offset="1887">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="24" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
@@ -1322,9 +1307,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="67" selection-start="313" selection-end="313" vertical-scroll-proportion="0.2802198" vertical-offset="0" max-vertical-offset="364">
+        <state line="6" column="67" selection-start="313" selection-end="313" vertical-scroll-proportion="-4.08" vertical-offset="0" max-vertical-offset="204">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ultimate39/android/androidcourse/ui/vacancy/ActivityDetailedVacancy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="43" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="2839">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_vacancy_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="57" selection-start="3152" selection-end="3152" vertical-scroll-proportion="0.33554816" vertical-offset="1259" max-vertical-offset="1887">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

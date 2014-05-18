@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import com.ultimate39.android.androidcourse.core.BitmapCacheDisplayer;
 import com.ultimate39.android.androidcourse.ui.MainActivity;
 import com.ultimate39.android.androidcourse.R;
 import com.ultimate39.android.androidcourse.core.vacancy.JsonVacancyParser;
@@ -50,6 +51,7 @@ public class FragmenVacancyListView extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
+        setHasOptionsMenu(true);
         mVacancyParser = new JsonVacancyParser(getActivity());
         mActionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         mActionBar.setDisplayShowTitleEnabled(true);
@@ -101,6 +103,7 @@ public class FragmenVacancyListView extends Fragment {
                 String vacancyId = ((Vacancy)mVacanciesAdapter.getItem(position)).getId();
                 intent.putExtra(ActivityVacancies.KEY_VACANCY_ID, vacancyId);
                 Log.d(ActivityVacancies.LOG_TAG, "Vacancy ID:" + vacancyId);
+                BitmapCacheDisplayer.getInstance(getActivity(), "images").stopDisplayImages();
                 startActivity(intent);
             }
         });

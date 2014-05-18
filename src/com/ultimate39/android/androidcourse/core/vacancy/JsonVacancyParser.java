@@ -50,7 +50,7 @@ public class JsonVacancyParser implements VacancyParser {
         ArrayList<Vacancy> vacancies = new ArrayList<Vacancy>();
         try {
             JSONObject object = new JSONObject(source);
-            System.out.println("TEXT REQUEST:"+source);
+            System.out.println("TEXT REQUEST:" + source);
             foundedVacancies = object.getInt("found");
             JSONArray jsonVacancies = (JSONArray) object.get("items");
             for (int item = 0; item < jsonVacancies.length(); item++) {
@@ -76,19 +76,19 @@ public class JsonVacancyParser implements VacancyParser {
             JSONObject jsonEmployer = (JSONObject) jsonVacancy.get("employer");
             String employerName = jsonEmployer.getString("name");
             String id = jsonEmployer.getString("id");
-
-            JSONObject jsonSalary = (JSONObject) jsonVacancy.get("salary");
-            String from = jsonSalary.getString("from");
-            String to = jsonSalary.getString("to");
-            String currency = currencyConverter(jsonSalary.getString("currency"));
             String salary = "";
-            if(from != null) {
-                salary += from;
-                if(to != null) {
-                    salary+= " - " +to + " "  + currency;
+            if (!jsonVacancy.isNull("salary")) {
+                JSONObject jsonSalary = (JSONObject) jsonVacancy.get("salary");
+                String from = jsonSalary.getString("from");
+                String to = jsonSalary.getString("to");
+                String currency = currencyConverter(jsonSalary.getString("currency"));
+                if (from != null) {
+                    salary += from;
+                    if (to != null) {
+                        salary += " - " + to + " " + currency;
+                    }
                 }
             }
-
             String logoUrl = null;
             if (!jsonEmployer.isNull("logo_urls")) {
                 logoUrl = jsonEmployer.getJSONObject("logo_urls").getString("240");
@@ -115,8 +115,8 @@ public class JsonVacancyParser implements VacancyParser {
     private String currencyConverter(String currency) {
         try {
             return mContext.getResources().getString(mContext.getResources().getIdentifier(currency, "string", mContext.getPackageName()));
-        }catch (Exception e) {
-            Log.e(ActivityVacancies.LOG_TAG, "Resource not found:" +currency);
+        } catch (Exception e) {
+            Log.e(ActivityVacancies.LOG_TAG, "Resource not found:" + currency);
             e.printStackTrace();
         }
         return null;
