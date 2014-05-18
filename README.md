@@ -17,7 +17,7 @@ Android application for android course
 ###Bug inside Android library
 1)BitmapFactory.decode methods have issues. ( Not all jpeg image can be decoded <br> https://code.google.com/p/android/issues/detail?id=6066) <br>
 
-###Screenshots
+##Screenshots
 ![alt tag](https://raw.githubusercontent.com/ultimate39/android-course/master/screenshots/sc2.png)
 ![alt tag](https://raw.githubusercontent.com/ultimate39/android-course/master/screenshots/sc3.png)
 ![alt tag](https://raw.githubusercontent.com/ultimate39/android-course/master/screenshots/sc1.png)
