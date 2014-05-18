@@ -3,7 +3,7 @@ android-course
 
 Android application for android course 
 
-###Features
+##Features
 1) Asynchronous loading images <br>
 2) Caching images (in memory and on disk) <br>
 3) Search by region <br>
